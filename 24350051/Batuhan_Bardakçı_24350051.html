@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Batuhan Bardakçı">
+  <title> Batuhan Bardakçı</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * 
+    {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    body 
+    { 
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    padding: 20px;
+    } 
+
+    .container 
+    {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    }
+
+    header 
+    {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    header img 
+    {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #2b7a78;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    header img:hover 
+    {
+    transition: transform 1.5s;
+    transform: rotate(360deg);
+    }
+
+    h1 
+    {
+    font-size: 2.5rem;
+    color:#2b7a78;
+    }
+    h1:hover
+    {
+    transform: translateY(-5px);
+    transition: transform 0.8s;
+    }
+
+    section 
+    {
+    background:#ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+    }
+    section:hover
+    {
+    transform: translateY(-10px);
+    transition: transform 1.5s;
+    color: #000000;
+    background-color: #d7eaff;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .mail-icon 
+    {
+    display: inline-block;
+    font-size: 18px;
+    padding-left: 30px;
+    background: url('https://cdn-icons-png.flaticon.com/512/732/732200.png') no-repeat left center;
+    background-size: 20px;
+    }
+
+    p, ul, ol, blockquote 
+    {
+      margin-top: 10px;
+    }
+
+    ul, ol 
+    {
+    padding-left: 20px;
+    }
+
+    a 
+    {
+    color:#2b7a78;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+    a:hover 
+    {
+    color:#3aafa9;
+    text-decoration: underline;
+    }
+
+    table 
+    {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    th, td 
+    {
+    padding: 10px;
+    border: 1px solid #000000;
+    }
+
+    footer 
+    {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+    } 
+  </style>
+</head>
+<body style="background-color:rgb(180, 200, 250);">
+
+  <div class="container">
+
+    <header>
+      <img src="PP.jfif" alt="Profil Fotoğrafı"> 
+      <div>   <!-- Bu bir div örneğidir ve block seviyesi bir elementtir, sayfanın sağına ve soluna olabildiğince genişler -->
+       <h1>Batuhan Bardakçı</h1> 
+      </div>
+      <span>  <!-- Bu bir span örneğidir ve inline bir elementtir, sadece gerektiği kadar yer kaplar.--> 
+        This web page contains my portfolio.    
+      </span>
+    </header>
+
+  
+    <div>     
+      <section>
+        <h2 style="color:#3aafa9; margin-bottom: 10px;">About Me</h2> 
+        <p style="text-align: justify;"> Hello! I'm <strong>Batuhan</strong>, I am currently studying computer programming at <strong> Ankara University. </strong>
+        It is my first class in university. My aim is to improve myself in <em>web developing and programming.</em>   </p>
+      </section>
+
+      
+      <section>
+        <h2 style="color:#3aafa9; margin-bottom: 10px;">Contact</h2> 
+        <p>You can reach me at this <a href="mailto:bbardakci613@gmail.com" target="_blank" class="mail-icon">mail</a>.</p>
+      </section>
+
+      <section>
+        <blockquote style="font-size: 1.2rem; font-style: italic; text-align: center; color:#2b7a78; margin-top: 20px;">
+          "Software is a great combination between artistry and engineering." - Bill Gates
+        </blockquote>
+      </section>
+      
+    </div>
+   
+    <section>
+      <h2 style="color:#3aafa9; margin-bottom: 10px;">Skills</h2>
+    
+      <div style="display: flex; justify-content: space-between; gap: 20px;">
+    
+      
+        <div>
+          <h3>Technical</h3>
+          <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Adobe Photoshop</li>
+          </ol>
+          <br>
+          <h3>Personal</h3>
+          <ul>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Creativity</li>
+          </ul>
+        </div>
+    
+        <div style="margin-right: 70px;">
+          <h2 style="color: #3aafa9;">Hobbies</h2>
+          <ul>
+            <li>Playing Basketball</li>
+            <li>Playing Guitar</li>
+            <li>Listening music</li>
+            <li>Exploring new technologies</li>
+          </ul>
+        </div>
+    
+      </div>
+    </section>
+    
+     
+      <section style="grid-column: 1 / -1;">
+          <h2 style="color:#3aafa9; margin-bottom: 10px;">About Education</h2> 
+          <table>
+            <tr>
+              <th>School</th>
+              <th>Department</th>
+              <th>Year</th>
+            </tr>
+            <tr>
+              <td>Ankara Üniversitesi</td>
+              <td>Computer Programming</td>
+              <td>2024-2025</td>
+            </tr>
+            <tr>
+              <td>Mehmet Ali Hasan Coşkun Lisesi </td>
+              <td>Foreign Language Department</td>
+              <td>2019-2023</td>
+            </tr>
+          </table>
+      </section>
+  </div>
+
+  <footer>
+  &copy; Batuhan Bardakçı
+  </footer>
+
+</body>
+</html>

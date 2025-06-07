@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaan'ın Portföyü</title>
+  <link rel="icon" href="user-secret-solid.svg" type="svg">
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a192f;
+      color: #ccd6f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header h1 .highlight {
+      color: #64ffda;
+    }
+
+    header p {
+      color: #8892b0;
+      font-size: 1.3rem;
+      max-width: 500px;
+      margin: 0 auto 20px;
+    }
+
+    img.profile {
+      width: 350px;
+      border-radius: 50%;
+      margin: 20px 0;
+    }
+
+    .btn {
+      background: none;
+      border: 1px solid #64ffda;
+      padding: 10px 25px;
+      color: #64ffda;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.5s;
+    }
+
+    .btn:hover {
+      background-color: #64ffda;
+      color: #0a192f;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #64ffda;
+      display: inline-block;
+    }
+
+    ul,
+    ol {
+      padding-left: 20px;
+      margin-top: 10px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+    }
+
+    .skills li {
+      margin-bottom: 10px;
+    }
+
+    .skills li:hover {
+      color: #64ffda;
+    }
+
+    .project {
+      background-color: #112240;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      color: #64ffda;
+      margin: 0 0 10px 0;
+    }
+
+    .project .btn {
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      color: #ccd6f6;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #8892b0;
+      font-size: 1.5rem;
+      border-left: 4px solid #64ffda;
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .block {
+      background-color: #112240;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .inline {
+      color: #64ffda;
+    }
+
+    .contact a {
+      color: #64ffda;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #112240;
+      color: #8892b0;
+      margin-top: 40px;
+    }
+
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .switch {
+      font-size: 17px;
+      position: relative;
+      display: inline-block;
+      width: 3.5em;
+      height: 2em;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      --background: #28096b;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--background);
+      transition: .5s;
+      border-radius: 30px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 1.4em;
+      width: 1.4em;
+      border-radius: 50%;
+      left: 10%;
+      bottom: 15%;
+      box-shadow: inset 8px -4px 0px 0px #fff000;
+      background: var(--background);
+      transition: .5s;
+    }
+
+    input:checked+.slider {
+      background-color: #522ba7;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(100%);
+      box-shadow: inset 15px -4px 0px 15px #fff000;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      z-index: 999;
+    }
+
+    body.light-mode {
+      background: #f8f2c9;
+      color: #1a1a1a;
+    }
+
+    body.light-mode header p,
+    body.light-mode p,
+    body.light-mode li,
+    body.light-mode td,
+    body.light-mode th,
+    body.light-mode blockquote {
+      color: #333;
+    }
+
+    body.light-mode header h1 .highlight,
+    body.light-mode .skills li:hover,
+    body.light-mode .contact a,
+    body.light-mode .project h3 {
+      color: #0a74da;
+    }
+
+    body.light-mode .btn {
+      border-color: #0a74da;
+      color: #0a74da;
+    }
+
+    body.light-mode .btn:hover {
+      background-color: #0a74da;
+      color: #fff;
+    }
+
+    body.light-mode .project,
+    body.light-mode footer,
+    body.light-mode .block {
+      background-color: #e1d691;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Bu bir yorum satırıdır -->
+  <header>
+    <h1>Merhaba, ben <span class="highlight">Kaan</span></h1>
+    <p>Bilgisayar Programcısı olarak sade ve kullanıcı dostu siteler yapıyorum.</p>
+    <img src="KaanF.jpg" alt="Profil Fotoğrafı" class="profile">
+    <br><br>
+    <a href="#projects" class="btn">Projelerim</a>
+
+    <label class="switch" id="theme-toggle">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+
+
+
+  </header>
+
+  <section id="about">
+    <h2>Hakkımda</h2>
+    <p>
+      Bilgisayar Programcılığı öğrencisiyim. Yazılım dünyasında sadece tek bir alana değil,
+      <strong>bütüne hâkim olmayı</strong> hedefliyorum.
+    </p>
+    <p>
+      Bir fikrin sıfırdan koda dökülmesi, arka planda çalışan mantıkların ön yüzdeki kullanıcıyla buluşması
+      beni <em>gerçekten heyecanlandırıyor</em>.
+    </p>
+    <p>
+      Tasarımdan veritabanına, kullanıcı deneyiminden performansa kadar her katmanda kendimi geliştirmeye çalışıyorum.
+      Frontend veya backend ayrımı yapmıyorum; <strong>sistemi anlayarak üretmek</strong>,
+      <em>her parçayı yerli yerine oturtmak</em> istiyorum.
+    </p>
+    <p>
+      Amacım, ihtiyaç duyulan her yerde devreye girebilen,
+      <strong>tam donanımlı bir Full Stack geliştirici</strong> olmak.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Beceriler</h2>
+    <ul class="skills">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>C++</li>
+      <li>Python</li>
+      <li>Responsive Design</li>
+      <li>Git & GitHub</li>
+    </ul>
+    <ol>
+      <li>Temiz Kod</li>
+      <li>Mobil Uyumlu Tasarım</li>
+      <li>Takım Çalışması</li>
+    </ol>
+  </section>
+
+  <section id="projects">
+    <h2>Projelerim</h2>
+
+    <div class="project">
+      <h3>Hesap Makinesi</h3>
+      <p>HTML, CSS ve JavaScript ile yapılmış basit hesap makinesi.</p>
+      <a href="#" class="btn">GitHub</a>
+    </div>
+
+    <div class="project">
+      <h3>Portföy Web Sitesi</h3>
+      <p>Kendimi tanıttığım kişisel portföy sitem.</p>
+      <a href="#" class="btn">Canlı Demo</a>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Eğitim Bilgileri</h2>
+    <table>
+      <tr>
+        <th>Okul</th>
+        <th>Bölüm</th>
+        <th>Yıl</th>
+      </tr>
+      <tr>
+        <td>Ankara Üniversitesi</td>
+        <td>Bilgisayar Programcılığı</td>
+        <td>2024 - 2026</td>
+      </tr>
+      <tr>
+        <td>Mehmet Akif Ersoy Anadolu Lisesi</td>
+        <td>Sayısal</td>
+        <td>2018 - 2022</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="quote">
+    <h2>Favori Sözüm</h2>
+    <blockquote>"Büyük güç, büyük sorumluluk getirir."</blockquote>
+  </section>
+
+  <section id="structure">
+    <h2>HTML Yapı Türleri</h2>
+
+    <div
+      style="background-color:#6b75ae; padding:20px; margin-bottom:10px; border-left:5px solid #64ffda; border-radius:6px;">
+      <strong>&lt;div&gt;</strong> bir block elementtir. Her zaman yeni satıra başlar ve tüm genişliği kaplar.
+    </div>
+
+    <p>
+      Bu cümlede <span
+        style="background-color:#64ffda; color:#0a192f; padding:2px 6px; border-radius:4px;">&lt;span&gt;</span> etiketi
+      inline yapıdadır ve sadece bulunduğu yazı kadar yer kaplar.
+    </p>
+    <!-- Bu da ikinci yorum satırımız -->
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>İletişim</h2>
+    <p>E-posta: <a href="mailto:tevfikaanfiliz@gmail.com">tevfikaanfiliz@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/tkaanf" target="_blank">https://github.com/TKaanF</a></p>
+  </section>
+
+  <footer>
+    © 2025 Kaan. Tüm hakları saklıdır.
+  </footer>
+
+  <script>
+    const toggle = document.querySelector("#theme-toggle input");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "light") {
+      body.classList.add("light-mode");
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        body.classList.add("light-mode");
+        localStorage.setItem("theme", "light");
+      } else {
+        body.classList.remove("light-mode");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  </script>
+</body>
+
+</html>

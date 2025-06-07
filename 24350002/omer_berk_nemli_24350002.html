@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ömer Berk Nemli'nin Portföyü</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <style>
+        /* Koyu Tema CSS Stilleri */
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #e74c3c;
+            --dark-color: #ecf0f1;
+            --light-color: #2c3e50;
+            --accent-color: #f39c12;
+            --background-color: #2c3e50;
+            --text-color: #ecf0f1;
+            --border-color: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-color);
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--background-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        section {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--dark-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .about-me strong {
+            color: var(--dark-color);
+        }
+
+        .about-me em {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .skills-list {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        tr:hover {
+            background-color: #34495e;
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 1.5rem;
+            background-color: #34495e;
+            border-left: 4px solid var(--secondary-color);
+            margin: 1rem 0;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .box-example {
+            margin: 1rem 0;
+        }
+
+        .block-example {
+            display: block;
+            background-color: var(--light-color);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+        }
+
+        .inline-example {
+            display: inline;
+            background-color: var(--light-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 1024px) {
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skills-list {
+                flex: 1 1 100%;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skills-list {
+                min-width: 100%;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            .quote {
+                padding: 1rem;
+            }
+
+            .box-example {
+                margin: 1rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem 0;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skills-list {
+                min-width: 100%;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Başlık ve tanıtım kısmı -->
+    <header>
+        <div class="container">
+            <img src="resimim.png" alt="Ömer'in fotoğrafı" class="profile-img">
+            <h1>Ömer Berk Nemli</h1>
+            <p class="tagline">Bilgisayar Programcısı</p>
+			<a href="omer_berk_nemli_24350002_ing.html">English 🇬🇧 </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hakkımda bölümü -->
+        <section class="about-me">
+            <h2>Hakkımda</h2>
+            <p>Merhaba, ben Ömer Berk. <strong>2 yıldır</strong> Bilgisayar Programcısıyım. <em>Kullanıcı dostu</em> ve <em>modern</em> arayüzler tasarlamayı seviyorum.</p>
+            <p>Çalışmalarımı <a href="https://github.com/omerberknemli" target="_blank">GitHub profilimde</a> inceleyebilirsiniz.<br> <em><br>Bana ulaşmak isterseniz <a href="mailto:omerberknemli@gmail.com">omerberknemli@gmail.com</a> adresinden ulaşabilirsiniz</em>.</p>
+        </section>
+
+        <!-- Yetenekler bölümü -->
+        <section class="skills">
+            <h2>Yeteneklerim</h2>
+            <div class="skills-container">
+                <div class="skills-list">
+                    <h3>Teknik Beceriler</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>C++</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+                <div class="skills-list">
+                    <h3>Öğrenme Sürecim</h3>
+                    <ol>
+                        <li>Temel HTML/CSS öğrenme</li>
+                        <li>C++ öğrenme</li>
+                        <li>Proje yönetimi araçları</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eğitim geçmişi -->
+        <section class="education">
+            <h2>Eğitim Geçmişim</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Yıl</th>
+                        <th>Kurum</th>
+                        <th>Yüksekokul</th>
+                        <th>Bölüm</th>
+                        <th>Program</th>
+                        <th>Not</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-</td>
+                        <td>Ankara Üniversitesi</td>
+                        <td>Nallıhan Meslek Yüksekokulu</td>
+                        <td>Bilgisayar Teknolojileri Bölümü</td>
+                        <td>Bilgisayar Programcılığı</td>
+                        <td>2.78/4.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Özlü söz bölümü -->
+        <section class="quote-section">
+            <h2>Favori Sözüm</h2>
+            <div class="quote">
+                "Dünyada her zaman zengin ve başarılı insanlar olacaktır. Ama başarı, hayatta ne yaptığınızı seçme ve başkalarına yardım etme fırsatınızla ölçülür."
+                <div class="quote-author">- Bill Gates</div>
+            </div>
+        </section>
+
+        <!-- Block ve inline öğelere örnek -->
+        <section class="box-example-section">
+            <h2>Block ve Inline Öğeler</h2>
+            <div class="box-example">
+                <div class="block-example">Bu bir block elementidir. Tüm satırı kaplar.</div>
+                <span class="inline-example">Bu bir inline elementidir.</span>
+                <span class="inline-example">Yan yana görüntülenir.</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; @2025 Ömer Berk Nemli. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</body>
+</html>

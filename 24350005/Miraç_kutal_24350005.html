@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- UTF-8 karakter kodlaması -->
+    <meta charset="UTF-8">
+    <!-- Telefona uyumlu responsive tasarım için viewport meta etiketi -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Sayfa başlığı -->
+    <title>Miraç Kutal'ın Portföyü</title>
+    
+    <!-- Favicon ikonu -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <style>
+        /* Tema değişkenleri - Sayfa renklerinin kolay değiştirilebilmesini sağlar */
+        :root {
+            --primary-color: #e30a17; /* Türk kırmızısı */
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --section-bg: white;
+            --header-bg: #e30a17;
+            --header-text: white;
+            --table-hover: #f1f1f1c8;
+            --link-hover: #b30000;
+        }
+
+        /* Alternatif tema (mavi tema) */
+        body.alt-theme {
+            --primary-color: #2980b9; /* Mavi tema */
+            --text-color: #333;
+            --bg-color: #ecf0f1;
+            --section-bg: white;
+            --header-bg: #2980b9;
+            --header-text: white;
+            --table-hover: #d6eaf8;
+            --link-hover: #1a5276;
+        }
+
+        /* Temel stiller */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease; /* Tema değişiminde yumuşak geçiş */
+        }
+        
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            text-align: center;
+            padding: 2rem 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            /* Mobil cihazlar için yatay dolgu azaltma */
+            width: 90%;
+        }
+        
+        .profile-img {
+            width: 12%;
+            height: 12%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Küçük ekranlarda küçültme */
+            max-width: 100%;
+        }
+        
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        
+        .section {
+            background-color: var(--section-bg);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            overflow-x: auto;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .education-table thead {
+            background-color: var(--primary-color);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        
+        .education-table th {
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .education-table tbody tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .education-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        .education-table td {
+            padding: 12px;
+            vertical-align: middle;
+        }
+        
+        .education-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9e0;
+        }
+        
+        /* Hover efektleri - Kullanıcı deneyimini artırmak için tablo satırları ve linkler 
+           üzerine gelindiğinde renk değişimi ve animasyon efektleri uygulanmıştır */
+        .education-table tbody tr:hover {
+            background-color: #ffe6e6; /* Daha belirgin bir hover rengi */
+            transition: background-color 0.3s ease; /* Yumuşak geçiş efekti */
+            box-shadow: 0 0 5px rgba(227, 10, 23, 0.3); /* Hafif bir gölge efekti */
+        }
+        
+        /* Mobil uyumluluk için tablo wrapper */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+        
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #555;
+            transition: border-left 0.3s ease;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+              text-decoration: underline;
+              color: black; /* Daha koyu bir kırmızı tonu */
+             transition: color 0.3s ease; /* Yumuşak renk geçişi */
+        }
+        span
+        {
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+       
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #333;
+            color: white;
+        }
+        
+        /* Telefon için responsive tasarım */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .education-table th,
+            .education-table td {
+                padding: 10px 8px;
+            }
+        }
+        
+        /* Çok küçük ekranlar için ek düzenlemeler */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            body {
+                font-size: 0.95rem;
+            }
+            
+            .section {
+                padding: 10px;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .education-table th,
+            .education-table td {
+                padding: 8px 6px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Durumları renklendir */
+        .status-student {
+            color: #2e86de;
+            font-weight: bold;
+        }
+        
+        .status-graduate {
+            color: #10ac84;
+            font-weight: bold;
+        }
+
+        /* Tema değiştirme butonu stilleri */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ankara Üniversitesi Nallıhan Meslek Yüksekokulu<br>
+            2024-2025 Eğitim-Öğretim Dönemi<br>
+            NBP128 Web Geliştirme Ortamları Uygulama Ara Sınavı</h1>
+        
+        <!-- Profil fotoğrafı -->
+        <img src="Miraç_kutal.jpg" alt="Miraç Kutal'ın Profil Fotoğrafı" class="profile-img">
+        
+        <!-- Başlık (h1) -->
+        <h2>Miraç Kutal</h2>
+        
+        <!-- Tanıtıcı paragraf -->
+        <p>Bilgisayar Programcılığı Öğrencisi | Web Geliştirici | Oyuncu </p>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Hakkımda</h2>
+            <!-- Kendinizi anlatan bir bölüm (strong ve em kullanımı) -->
+            <p>Merhaba, ben Miraç <strong>Ankara Üniversitesi Nallıhan Meslek Yüksekokulu</strong>'nda öğrenciyim.<span> Küçük yaşlardan beri teknolojiye ve oyunlara olan ilgim,</span> beni <em>web geliştirme</em> ve <em>yazılım</em> konularında kendimi geliştirmeye yönlendirdi. Şu anda HTML, CSS ve Python üzerinde çalışıyorum ve gelecekte <strong>mobil uygulama geliştirme</strong> alanında uzmanlaşmak istiyorum.</p>
+        </section>
+        
+        <section class="section">
+            <h2>Yeteneklerim</h2>
+            
+            <!-- Sıralı liste -->
+            <h3>Programlama Dilleri</h3>
+            <ol>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>C++</li>
+                <li>Python (Başlangıç)</li>
+            </ol>
+            
+            <!-- Sırasız liste -->
+            <h3>Diğer Yetenekler</h3>
+            <ul>
+                <li>Web Tasarım</li>
+                <li>Ekiple uyumlu olmak</li>
+                <li>Oyun oynama</li>
+                <li>İngilizce (temel Seviye)</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Eğitim Bilgilerim</h2>
+            
+            <!-- HTML tablo -->
+            <div class="table-wrapper">
+                <table class="education-table">
+                    <thead>
+                        <tr>    
+                            <th>Yıl</th>
+                            <th>Okul</th>
+                            <th>Bölüm</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024 - Devam</td>
+                            <td>Ankara Üniversitesi Nallıhan Meslek Yüksekokulu</td>
+                            <td>Bilgisayar Programcılığı</td>
+                            <td><span class="status-student">Öğrenci</span></td>
+                        </tr>
+                        <tr>
+                            <td>2020 - 2024</td>
+                            <td>Necip Fazıl Anadolu Lisesi</td>
+                            <td>Sayısal</td>
+                            <td><span class="status-graduate">Mezun</span></td>
+                        </tr>
+                        <tr>
+                            <td>2016 - 2020</td>
+                            <td>Piri Reis Ortaokulu</td>
+                            <td></td>
+                            <td><span class="status-graduate">Mezun</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Projelerim</h2>
+            <p>Şu anda üzerinde çalıştığım projeler:</p>
+            <ul>
+                <li>Kişisel web sitem (HTML ve CSS ile)</li>
+                <li>Basit bir hesap makinesi uygulaması</li>
+                <li>NumCrypt </li>
+            </ul>
+            
+            <!-- Harici bağlantı -->
+            <p> <a href=https://www.linkedin.com/in/mirac-kutal-5b2018331/ target="_blank">LinkedIn hesabıma</a> gidebilirsiniz </p>
+            <p>Projelerimi incelemek için <a href="https://github.com/mirac4106" target="_blank">GitHub hesabıma</a> göz atabilirsiniz.</p>
+        </section>
+        
+        <section class="section">
+            <h2>İlham Aldığım Sözler</h2>
+            
+            <!-- Alıntı (quote) -->
+            <blockquote>
+                "Vatanını en çok seven görevini en iyi yapandır."
+                <footer>— Mustafa Kemal Atatürk</footer>
+            </blockquote>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Miraç Kutal | İletişim: kutalmirac@gmail.com</p>
+    </footer>
+    
+    <!-- Tema değiştirme butonu - Kullanıcıların sayfa renklerini değiştirmesini sağlar -->
+    <button class="theme-toggle" id="themeToggle">🎨</button>
+    
+    <!-- JavaScript - Tema değiştirme fonksiyonu -->
+    <script>
+        // Tema değiştirme butonu işlevselliği
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Butona tıklandığında temayı değiştir
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('alt-theme')) {
+                body.classList.remove('alt-theme');
+                localStorage.setItem('theme', 'default');
+            } else {
+                body.classList.add('alt-theme');
+                localStorage.setItem('theme', 'alt');
+            }
+        });
+        
+        // Sayfa yüklendiğinde kullanıcının önceki tema tercihini kontrol et
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'alt') {
+                body.classList.add('alt-theme');
+            }
+        });
+    </script>
+    
+    <!--  Bu sayfa , HTML sınavı için Miraç Kutal'ın (kendimin) kişisel portföy sayfası olarak tasarladım -->
+    <!-- Sayfa yapısı, kişisel bilgiler, eğitim geçmişi, yetenekler ve projeler bölümlerinden oluşmaktadır -->
+    <!--div ve span arasındaki farkı göstermek amacıyla div içinde span kullanarak metin vurgusu yaptım-->
+</body>
+</html>

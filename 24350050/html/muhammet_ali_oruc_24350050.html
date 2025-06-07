@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammet Ali Oruç</title>
+  <link rel="stylesheet" href="../portfoy.css">
+  <link rel="shortcut icon" href="../images/myphoto.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- mod değiştirme butonu -->
+  <button id="themeToggle">🌙 Karanlık Mod</button>
+
+  <header>
+    <h1>Muhammet Ali Oruç - 24350050</h1>
+    <p>HTML 5.2, CSS, JavaScript, C++, C# & Sql</p>
+
+    <h1 style="font-size: medium; margin-top: 1%;">Ankara Üniversitesi Nallıhan Meslek Yüksekokulu <br>
+      2024 - 2025 Eğitim-Öğretim Dönemi <br>
+      NBP128 Web Geliştirme Ortamları Uygulama Ara Sınavı</h1>
+
+    <!--saat ve hava durumu-->
+    <div class="info-box">
+      <div id="weather"></div>
+    </div>
+
+    <div id="clockContainer">
+      <div id="clockIcon">🕒</div>
+      <div id="clockTime"></div>
+      <div id="clockDate"></div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#hakkimda">Hakkımda</a>
+    <a href="#projeler">Projeler</a>
+    <a href="#Tasarımlarım">Tasarımlarım</a>
+    <a href="#egitim">Eğitim Bilgilerim</a>
+    <a href="#hobivebasari">Hobi ve Başarılarım</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+  <!--hakkımda kısmı-->
+  <!--div block element kullanımı-->
+  <div class="container">
+    <section id="hakkimda" class="card">
+      <h2> Kısaca Tanışalım</h2>
+      <p>Selam! <!--span inline element kullanımı--> <span
+          style="color: rgb(66, 64, 61); text-decoration:underline;">Ben Muhammet Ali.</span> Web arayüz
+        tasarımı, responsive tasarımlar, kullanıcı deneyimi ve oyun geliştirme
+        üzerine çalışıyorum.
+      </p>
+      <blockquote>
+        <div class="quote-box">
+          <div class="quote" style="color: bisque;">“Bir şeyi gerçekten yapmak isteyen bir yol bulur, istemeyen ise
+            bahane.”</div>
+          <div class="author">— Jim Rohn</div>
+        </div>
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Filtrele</h2>
+      <select id="categoryFilter">
+        <option value="all">Tümü</option>
+        <option value="blog">Blog</option>
+        <option value="projeler">Projeler</option>
+        <option value="design">Tasarımlarım</option>
+        <option value="egitim">Eğitim Bilgilerim</option>
+        <option value="hobi">Hobi ve Başarılarım</option>
+        <option value="iletisim">İletişim</option>
+      </select>
+
+      <!-- Ana resim ve overlay resim -->
+
+      <div class="popup">
+        <img class="clicking" src="../images/clicking.png" alt="" width="60%" height="60%">
+        <img id="mainImage" src="../images/letter.png" class="main-img" alt="Ana Resim">
+        <img id="popupImage" src="../images/mylife.jpg" class="overlay-image" alt="Görünen Resim">
+      </div>
+      <!-- Ana resim ve overlay resim -->
+
+      <div class="projects">
+        <div class="project-card" data-category="blog">
+          <h3 class="kisisel">Kişisel Blog</h3>
+          <br>
+          <img class="my" src="../images/myphoto.png" alt="myphoto">
+          <p class="mytext"> <em>Merhaba! Ben Muhammet Ali Oruç. </em><br>
+            19 yaşındayım ve <em>Ankara Üniversitesi Nallıhan Meslek Yüksekokulu'nda </em><strong>Bilgisayar
+              Programcılığı</strong> öğrencisiyim. <br>
+            Yazılıma ve oyun geliştirmeye duyduğum ilgi, beni sürekli olarak yeni şeyler öğrenmeye ve üretmeye teşvik
+            <br>
+            ediyor. <br>
+            <br>
+            Şu anda <strong>Unity</strong> ile hem PC hem de mobil platformlar için oyunlar geliştiriyorum.
+            Özellikle<strong>
+              yaşam
+              simülasyonu, fizik tabanlı</strong> parkur oyunları ve kullanıcı dostu masaüstü uygulamaları üzerinde
+            çalışıyorum.
+            Oyunlarımda sade ama etkileyici bir deneyim sunmaya, uygulamalarımda ise <strong>işlevsellik ve
+              sadelik</strong> dengesini
+            kurmaya özen
+            gösteriyorum.<br>
+            <br>
+            Frontend tarafında <strong>HTML, CSS ve JavaScript </strong>kullanarak şık ve işlevsel arayüzler tasarlıyor;
+            <strong>C#</strong> ile
+            Windows<br>
+            Forms projeleri geliştiriyorum. Aynı zamanda kendi projelerim için web tabanlı sistemler <em>(örneğin kargo
+              ve<br>
+              kurye takip siteleri) </em>geliştirerek hem yazılım hem de kullanıcı deneyimi <em>(UX)</em> tarafında
+            kendimi<br>
+            geliştiriyorum.<br>
+            <br>
+            Yazılımla birlikte spor da hayatımın önemli bir parçası. <strong>Satrançta 8 yıllık bir geçmişim ve
+              çeşitli<br>
+              derecelerim var. Ayrıca futbol, okçuluk ve kickboksla ilgileniyorum. </strong>Bu sporlar bana disiplin,
+            strateji
+            ve<br>
+            odaklanma kazandırdı – bu becerileri yazılım geliştirme sürecime de yansıtıyorum.<br>
+            <br>
+            Hedefim<br>
+            Kendimi yazılım ve oyun geliştirme alanında sürekli geliştirerek hem yaratıcı hem de işlevsel projeler<br>
+            üretmek. Uzun vadede kendi girişimimi kurarak teknoloji dünyasında kalıcı bir iz bırakmak istiyorum.
+          </p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="project-card2" data-category="projeler">
+          <h3 class="kisisel" id="projeler">Projelerim</h3>
+          <br>
+          <table style="width:100%">
+            <tr>
+              <td><img src="../images/agac.png" alt="ağaç" width="100%" height="100%"></td>
+              <td><img src="../images/itfaiye.png" alt="itfaiye" width="100%" height="100%"></td>
+              <td><img src="../images/yol.png" alt="yol" width="100%" height="100%"></td>
+            </tr>
+            <tr>
+              <td><img src="../images/dağ.png" alt="dağ" width="100%" height="100%"></td>
+              <td><img src="../images/dolap.png" alt="dolap" width="100%" height="100%"></td>
+              <td><img src="../images/ev.png" alt="ev" width="100%" height="100%"></td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+      <section id="Tasarımlarım">
+        <div class="projects">
+          <div class="project-card3" data-category="design">
+            <h3 class="kisisel">Tasarımlarım</h3>
+            <br>
+            <table style="width:100%">
+              <tr>
+                <td><img src="../images/tasarim1.png" alt="ağaç" width="100%" height="100%"></td>
+                <td><img src="../images/tasarim2.png" alt="itfaiye" width="100%" height="100%"></td>
+                <td><img src="../images/tasarim3.png" alt="yol" width="100%" height="100%"></td>
+              </tr>
+              <tr>
+                <td><img src="../images/tasarim4.png" alt="dağ" width="100%" height="100%"></td>
+                <td><img src="../images/tasarim5.png" alt="dolap" width="100%" height="100%"></td>
+                <td><img src="../images/tasarim6.png" alt="ev" width="100%" height="100%"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!--eğitim bilgilerim-->
+    <section id="egitim">
+
+      <div class="egitim-bilgileri" data-category="egitim">
+        <h2 class="egitimbslk">Eğitim Bilgilerim</h2>
+
+        <table class="egitim1" style="width:100%">
+          <tr>
+            <td class="egitim">Eğitim Gördüğüm Okullar</td>
+            <td class="egitim">Eğitim Gördüğüm Tarihler</td>
+            <td class="egitim">Okul Sonu Not Ortalamalarım</td>
+          </tr>
+          <!--ilkokul-->
+          <tr>
+            <td class="egitim">Cargill İlkokulu</td>
+            <td class="egitim">2012 - 2016</td>
+            <td class="egitim">100</td>
+          </tr>
+          <!--ortaokul-->
+          <tr>
+            <td class="egitim">Orhangazi İmamhatip Ortaokulu</td>
+            <td class="egitim">2016-2020</td>
+            <td class="egitim">93</td>
+          </tr>
+          <!--lise-->
+          <tr>
+            <td class="egitim">15 Temmuz Şehitler Anadolu Lisesi</td>
+            <td class="egitim">2020-2024</td>
+            <td class="egitim">70</td>
+          </tr>
+          <!--üniversite-->
+          <tr>
+            <td class="egitim">Ankara Üniversitesi</td>
+            <td class="egitim">2024 - Devam Ediyor</td>
+            <td class="egitim">------</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!--Hobi ve Başarılarım-->
+    <section id="hobivebasari">
+      <div class="hobi1" data-category="hobi">
+        <ul>
+          <h2 class="hobiler" style="text-align: center; padding-bottom: 1%;">Hobi ve Başarılarım</h2>
+          <li class="hobi" style="width: fit-content;">Okçuluk
+            --------------------------------------------------------------------------</li>
+          <li class="hobi" style="width: fit-content;">Futbol
+            ----------------------------------------------------------------------------</li>
+          <li class="hobi" style="width: fit-content;">Kickboks
+            -------------------------------------------------------------------------</li>
+          <li class="hobi" style="width: fit-content;">Satranç
+            --------------------------------------------------------------------------</li>
+        </ul>
+
+        <ol style="margin-left: 60%; margin-top: -86px;">
+          <li class="hobi" style="width: fit-content;">İlçe Üçüncülüğü</li>
+          <li class="hobi" style="width: fit-content;">Turnuva Oyuncusu</li>
+          <li class="hobi" style="width: fit-content;">Türkiye Şampiyonası</li>
+          <li class="hobi" style="width: fit-content;">İlçe (Bursa/Orhangazi) bir ve üçüncülüğü, İl (Bursa) birinciliği,
+            Marmara Bölgesi turnuvası ikinciliği </li>
+        </ol>
+      </div>
+    </section>
+    <section id="iletisim" class="card" data-category="iletisim">
+      <h2>İletişim</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST" id="contactForm">
+        <input type="text" name="name" placeholder="Adınız" required />
+        <input type="email" name="email" placeholder="E-posta" required />
+        <textarea name="message" placeholder="Mesajınız" required></textarea>
+        <button type="submit">Gönder</button>
+        <p id="formStatus" style="margin-top:10px; color:green; display:none;">Mesajınız gönderildi! 🎉</p>
+      </form>
+    </section>
+  </div>
+
+  <!-- Asistan Alanı -->
+
+  <div id="assistant" class="asistan-kapsayici gizli">
+    <div class="avatar">
+      <img src="../images/policeman.png" alt="asistan" />
+    </div>
+    <div class="mesaj-balon">
+      <p style="color: blue;">Merhaba! Nereye Gidelim?</p>
+      <div class="butonlar">
+        <button onclick="scrollToSection('hakkimda')">Hakkımda</button>
+        <button onclick="scrollToSection('projeler')">Projelerim</button>
+        <button onclick="scrollToSection('iletisim')">İletişim</button>
+        <button onclick="scrollToSection('Tasarımlarım')">Tasarımlarım</button>
+        <button onclick="scrollToSection('egitim')">Eğitim Bilgilerim</button>
+        <button onclick="scrollToSection('hobivebasari')">Hobi ve Başarılarım</button>
+        <button onclick="scrollToSection('yorum')">Yorum yap!</button>
+      </div>
+    </div>
+  </div>
+  <!--yorumlar-->
+  <h2 data-category="yorum">💬 Ziyaretçi Yorum Paneli</h2>
+
+  <input type="text" id="adSoyad" placeholder="Adınız Soyadınız"><br>
+  <textarea id="yorum" placeholder="Yorumunuzu yazın..."></textarea><br>
+  <button onclick="yorumEkle()">Yorumu Gönder</button>
+
+  <h3>📋 Yorumlar</h3>
+  <div id="yorumListesi"></div>
+
+
+  <!--footer, sayfa sonu-->
+  <footer class="footer hidden-footer" id="footer">
+    <p>© 2025 Muhammet Ali Oruç | Tüm hakları saklıdır.</p>
+
+    <div class="contact-info">
+      <a href="https://github.com/AliOruc69" title="Github">GitHub: AliOruc69</a>
+      <a href="https://www.linkedin.com/in/muhammet-ali-oru%C3%A7-0837a2293/" title="linkedin">linkedin: Muhammet Ali
+        Oruç</a>
+      <a href="mailto:oruca69@gmail.com" title="E-posta gönder">📧 oruca69@gmail.com</a>
+      <a href="tel:+905530901669" title="Ara">📱 +90 553 090 16 69</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://github.com/kullaniciadiniz" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/kullaniciadiniz" target="_blank" title="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/905555555555" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+  <button id="scrollTopBtn">↑</button>
+  <script src="../portfoy.js"></script>
+</body>
+
+</html>

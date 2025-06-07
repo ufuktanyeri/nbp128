@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mustafa Efe'nin Portföyü</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Başlık ve navigasyon menüsü -->
+  <header class="navbar">
+    <h1 style="font-size: medium; text-align: center; padding-bottom: 1%;"> Ankara Üniversitesi Nallıhan Meslek Yüksekokulu<br>2024-2025 Eğitim-Öğretim Dönemi<br>
+      NBP128 Web Geliştirme Ortamları Uygulama Ara Sınavı</h1>
+    <nav class="navbar-container container">
+      <a href="#hero">Anasayfa</a>
+      <a href="#about">Hakkımda</a>
+      <a href="#skills">Becerilerim</a>
+      <a href="#education">Eğitim</a>
+      <a href="#projects">Projeler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <img src="profil.png" alt="Mustafa Efe'nin Profil Fotoğrafı" class="profile-img" />
+        <h1 class="glow-text">Merhaba, Benim Adım Mustafa Efe</h1>
+        <p class="subtitle">Bilgisayar Programcısı Adayı | Öğrenci | Tasarımcı</p>
+        <div class="social-buttons">
+          <a href="https://www.linkedin.com/in/mustafaefeorsdemir06" class="btn" target="_blank" aria-label="LinkedIn Profilim">LinkedIn</a>
+          <a href="https://github.com/mustafaefe0651" class="btn" target="_blank" aria-label="GitHub Profilim">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+      <!-- Hakkımda bölümü -->
+    <section class="section about" id="about">
+      <div class="about-content container">
+        <h2>Hakkımda</h2>
+        <p>Adım <strong>Mustafa Efe Örsdemir</strong>, <em>18 yaşındayım</em>. Niğde'de doğdum. İlkokul, ortaokul ve liseyi Niğde'de tamamladım. Şu anda Ankara'da, <span class="highlight"> Ankara Üniversitesi </span> Nallıhan Meslek Yüksekokulu'nda Bilgisayar Programcılığı 1. sınıf öğrencisiyim.</p>
+        <p><strong>Ben bir bilgisayar programcılığı öğrencisi </strong> olarak teknoloji ve yazılım geliştirme alanında geniş bir ilgiye sahibim. <em>Yaratıcı çözümler</em> geliştirmeyi ve <strong>yeni teknolojilere</strong> ayak uydurmayı seviyorum.</p>
+        <p>Geliştirdiğim projelerle, iş dünyasına katkı sağlamayı hedefliyorum ve her zaman daha büyük hedefler için ilerlemeyi umuyorum.</p>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2 style="padding-bottom: 8%;">Becerilerim</h2>
+      <div style="margin-left: 27%;">
+        <ul>
+          <li style="width: fit-content ;">HTML</li>
+          <li style="width: fit-content ;">CSS</li>
+          <li style="width: fit-content ;">JavaScript</li>
+        </ul>
+      </div>
+
+      <div style="margin-left: 67%; margin-top: -60px;">
+        <ul>
+          <li style="width: fit-content ;">Python</li>
+          <li style="width: fit-content ;">Java</li>
+          <li style="width: fit-content ;">C++</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section education" id="education">
+      <h2>Eğitim</h2>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Yıl</th>
+              <th>Eğitim Kurumu</th>
+              <th>Bölüm</th>
+              <th>Derece</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2013 - 2020</td>
+              <td>Gazi İlk ve Ortaokulu</td>
+              <td>-</td>
+              <td>İlkokul-Ortaokul</td>
+            </tr>
+            <tr>
+              <td>2020 - 2024</td>
+              <td>Şehit Yakup Avşar Anadolu Lisesi</td>
+              <td> Sayısal </td>
+              <td>Lise</td>
+            </tr>
+            <tr>
+              <td>2024 - Devam ediyor</td>
+              <td>Ankara Üniversitesi</td>
+              <td>Bilgisayar Programcılığı</td>
+              <td>Önlisans</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>İletişim</h2>
+        <form id="iletisim-form" class="contact-form" action="mailto:example@example.com" method="post" enctype="text/plain">
+          <label for="name">Adınız:</label>
+          <input type="text" id="name" name="name" placeholder="Adınızı girin" required />
+
+          <label for="email">E-posta:</label>
+          <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required />
+
+          <label for="message">Mesajınız:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazın" required></textarea>
+
+          <button type="submit" class="btn" aria-label="Formu Gönder">Gönder</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <blockquote style="margin-top: 10px; font-style: italic; color: var(--text-color);">
+      "Kodlama bilen insanlar hayal edebildikleri her şeyi bilgisayara yaptırtma yeteneğine sahiptir." (Tim Berners-Lee) 
+    </blockquote>
+    <p>&copy; 2025 Tüm Hakları Saklıdır - Mustafa Efe Örsdemir</p>
+  </footer>
+
+  <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Sayfanın Başına Dön">↑</button>
+</body>
+</html>

@@ -1,0 +1,242 @@
+.body{
+    background-color:rgb(255, 224, 247);
+    font-family: Arial, sans-serif;
+    color: rgb(126, 72, 102);
+}
+
+.hello-navbar {
+    background-color: #ffc0cb;
+    border-bottom: 3px solid #ff69b4;
+    padding: 0.5rem 0;
+    font-family: 'Baloo 2', cursive;
+  }
+
+
+  .navbar-nav .nav-link {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #ff69b4;
+    transform: scale(1.05);
+  }
+  
+.nav-item{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+table, th, td {
+    border-collapse: collapse;
+  }
+
+.profil{
+    width: 80%;
+    border: 5px solid rgb(255, 255, 255);
+    margin: 25px;
+    padding: 5px;
+}
+
+.card{
+    width: 60px;
+    height: 60px;
+}
+.card-img-top{
+    width: 220px;
+    height: 220px;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 20px;
+}
+.card{
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 35px;
+    margin-top: -1%;
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.content{
+    padding: 20px;
+}
+.content h1{
+    margin-bottom: 10px;
+}
+
+.content p{
+    font-size: 17px;
+    color: #333;
+    line-height: 1.4;
+}
+@media  screen and (max-width:768px) {
+    .card{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+/*--------------------------------------------------*/
+.song-card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .song-card-inner {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .song-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .song-card p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .song-card iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 80px;
+  }
+  
+  .song-card:hover {
+    transform: scale(1.05);
+  }
+/*-------------------------------------------------*/
+.footer-hobi{
+    margin-top: 800px;
+    background-color:#ffc0cb;
+}
+
+.footer{
+    background-color:#ffc0cb;
+    color: white;
+    font-family: 'Baloo 2', cursive;
+}
+.footercontainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color:  #5e0707;
+    opacity: 0.9;
+}
+.icon{
+    width: 17%;
+    margin-left: 85px;
+    transition: all 0.4s ease-in-out;
+}
+
+.socialIcons a:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-self: center;
+    list-style-type: style type nonedisc;;
+}
+.footerNav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color:#ff69b4;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-decoration: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+@media(max-width: 768px){
+    .footerNav ul{
+        flex-direction: column;
+    }
+    .footerNav ul li a{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons{
+        margin-bottom: 20px;
+    }
+    .footercontainer{
+        padding: 50px 20px;
+    }
+    .footerBottom p{
+        font-size: 0.8em;
+    }
+    .designer{
+        font-size: 0.8em;
+    }   
+}
+/* Hover efekti */
+  .icon:hover {
+    transform: scale(1.2) rotate(6deg);
+    box-shadow: 0 0 15px #ff69b4;
+    cursor: pointer;
+  }

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akif Genç Web Sayfasi</title>
+    <meta name="description" content="Akif Genç'in kişisel Web sayfası. Web geliştirme becerileri, eğitim geçmişi ve iletişim bilgileri.">
+    <link rel="icon" href="https://st2.depositphotos.com/38197074/44950/v/450/depositphotos_449500916-stock-illustration-initial-letter-vector-logo-icon.jpg" type="image/png">
+
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #95A5A6;
+            --background: #FAFAFA;
+            --light: #EAECEE;
+            --text-dark: #2C3E50;
+            --hover-blue: #007BFF;
+        }
+
+        body {
+    background: linear-gradient(to right, #434343, #000000);
+    color: var(--text-dark);
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+
+            margin: 0;
+            padding: 0;
+            background-color: #5d5959;
+            color: var(--text-dark);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+        }
+        .sidebar {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 250px;
+             background-color: var(--primary);
+             color: white;
+             padding: 20px;
+             height: 100vh;
+             overflow-y: auto;
+}
+
+        .content {
+              flex: 1;
+              padding: 40px 60px;
+              margin-left: 250px;
+}
+
+
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .sidebar img.profile {
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+            width: 120px;
+            height: 120px;
+            border-radius: 0;
+            border: 3px solid white;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .sidebar h1 {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .sidebar p {
+            text-align: center;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        nav h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 20px 0;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--hover-blue);
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px 60px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--hover-blue);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        td, th {
+            padding: 12px;
+            border: 1px solid #ccc;
+        }
+
+        blockquote {
+            font-style: italic;
+            background-color: var(--light);
+            padding: 15px;
+            border-left: 5px solid var(--secondary);
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .block {
+            display: block;
+            background-color: #D6EAF8;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #2980B9;
+        }
+
+        .inline {
+            display: inline;
+            background-color: #FADBD8;
+            padding: 4px;
+        }
+    
+.skill {
+    margin-bottom: 15px;
+}
+.skill span {
+    font-weight: bold;
+}
+.bar {
+    background-color: #ccc;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.progress {
+    background-color: #2980B9;
+    height: 100%;
+}
+
+.light-theme {
+    --background: #FAFAFA;
+    --text-dark: #2C3E50;
+    --primary: #2C3E50;
+    --secondary: #95A5A6;
+    --hover-blue: #007BFF;
+}
+.dark-theme {
+    --background: #121212;
+    --text-dark: #2C3E50; /* Sabit tut */
+    --primary: #1E1E1E;
+    --secondary: #444;
+    --hover-blue: #66B2FF;
+}
+body {
+    background-color: var(--background);
+    color: var(--text-dark);
+}
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="light-theme">
+
+<div class="sidebar">
+    <img src="https://sman22plg.sch.id/media_library/gambar/foto/pegawai/kepala_sekolah.jpg" alt="Profil Fotoğrafı" class="profile">
+    <h1> Muhammed Akif Genç</h1>
+    <p>Bilgisayar Programcısı</p>
+    <nav>
+        <h3>Menü</h3>
+        <a href="#hakkimda"><i class="fas fa-user"></i> Hakkımda</a>
+        <a href="#baglantilar"><i class="fas fa-link"></i> Bağlantılar</a>
+        <a href="#beceriler"><i class="fas fa-code"></i> Beceriler</a>
+        <a href="#egitim"><i class="fas fa-graduation-cap"></i> Eğitim</a>
+        <a href="#alinti"><i class="fas fa-quote-left"></i> Alıntı</a>
+        <a href="#ornekler"><i class="fas fa-puzzle-piece"></i> Örnekler</a>
+    
+    <button onclick="toggleTheme()" style="margin-top: 20px; width: 100%; padding: 10px; border: none; background-color: white; color: black; font-weight: bold; cursor: pointer; border-radius: 5px;">
+        🌗 Tema Değiştir
+    </button>
+</nav>
+</div>
+
+<div class="content">
+    <!-- Bu bir yorum satırıdır -->
+    <section id="hakkimda">
+        <h2>Hakkımda</h2>
+        <p>Merhaba Ben <i> Ankara Üniversitesi</i> Bilgisayar Programcılıgı 1.sınıf ögrencisiyim. Bir <strong>Front-End geliştirici</strong> olarak çalışıyor ve <em>HTML, CSS, JavaScript ve Python</em> dillerinde projeler geliştiriyorum. Tasarım odaklı ve kullanıcı dostu arayüzler yaratmayı seviyorum.</p>
+    </section>
+
+    <section id="baglantilar">
+        <h2>Bağlantılar</h2>
+        <p>Daha fazla içerik için <a href="https://github.com/akifgenc61" target="_blank">GitHub profilimi</a> ziyaret edebilirsiniz.</p>
+    </section>
+
+    <section id="beceriler">
+        <h2>Beceriler</h2>
+        <h3>Programlama Dilleri</h3>
+        
+        <div class="skill"><span>HTML</span><div class="bar"><div class="progress" style="width: 90%;"></div></div></div>
+        <div class="skill"><span>CSS</span><div class="bar"><div class="progress" style="width: 85%;"></div></div></div>
+        <div class="skill"><span>JavaScript</span><div class="bar"><div class="progress" style="width: 75%;"></div></div></div>
+        <div class="skill"><span>Python</span><div class="bar"><div class="progress" style="width: 80%;"></div></div></div>
+
+        <h3>Diğer Beceriler</h3>
+        <ul>
+            <li>Responsive Tasarım</li>
+            <li>SEO Uyumlu Kodlama</li>
+            <li>Git Versiyon Kontrol</li>
+        </ul>
+    </section>
+
+    <section id="egitim">
+        <h2>Eğitim Bilgilerim</h2>
+        <table>
+            <tr>
+                <th>Okul</th>
+                <th>Bölüm</th>
+                <th>Yıl</th>
+            </tr>
+            <tr>
+                <td>Ankara Üniversitesi</td>
+                <td>Bilgisayar Programcılığı</td>
+                <td>2023 - Devam Ediyor</td>
+            </tr>
+           
+        </table>
+    </section>
+    <section>
+        <h2>İletişim Bilgilerim</h2>
+        <ul>
+            <li>Telefon: <a href="tel:+905383746104">+90 5383746104</a></li>
+            <li>E-posta: <a href="mailto:akifgenc2004@gmail.com">akifgenc2004@gmail.com</a></li>
+    
+        </ul>
+    
+    </section>
+
+    <section id="alinti">
+        <h2>Günün sözü</h2>
+        <blockquote>
+            “Başarı, hazırlıkla fırsatın buluştuğu yerdir.” – Bobby Unser
+        </blockquote>
+    </section>
+
+    
+<section id="ornekler">
+
+        <h2>Block ve Inline Öğeleri</h2>
+        <div class="block">Bu bir <strong>block</strong> öğesidir.</div>
+        <p>Bu paragraf içinde <span class="inline">inline</span> öğe örneğidir.</p>
+    </section>
+
+    <!-- Sayfa sonunda ikinci bir yorum -->
+    <footer>
+        &copy; 2025 Akif Genç. Tüm hakları saklıdır.
+    </footer>
+</div>
+
+
+<script>
+function toggleTheme() {
+    const body = document.body;
+    if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+    } else {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+
+
+.body{
+    background-color:rgb(255, 224, 247);
+    font-family: Arial, sans-serif;
+    color: rgb(126, 72, 102);
+}
+.navbar{
+    background-color:rgb(255, 184, 234);
+    color: white;
+    padding: 10px 20px;
+}
+
+.nav-link{
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+}
+.nav-item{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+table, th, td {
+    border-collapse: collapse;
+  }
+
+.profil{
+    width: 80%;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 25px;
+}
+
+.card{
+    width: 60px;
+    height: 60px;
+}
+.card-img-top{
+    width: 220px;
+    height: 220px;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 20px;
+}
+.card{
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 35px;
+    margin-top: -1%;
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.content{
+    padding: 20px;
+}
+.content h1{
+    margin-bottom: 10px;
+}
+
+.content p{
+    font-size: 17px;
+    color: #333;
+    line-height: 1.4;
+}
+@media  screen and (max-width:768px) {
+    .card{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+.song {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .song h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 80px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-hobi{
+    margin-top: 800px;
+    background-color:rgb(254, 170, 215);
+}
+
+
+
+
+
+
+
+.footer{
+    background-color:rgb(254, 170, 215);
+    color: white;
+}
+.footercontainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color:  #5e0707;
+    opacity: 0.9;
+}
+.icon{
+    width: 17%;
+    margin-left: 85px;
+}
+/*sosyal medya iconlarına efekt ekleme*/
+
+.socialIcons a:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-self: center;
+    list-style-type: style type nonedisc;;
+}
+.footerNav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color:rgb(255, 153, 212);
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-decoration: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+@media(max-width: 768px){
+    .footerNav ul{
+        flex-direction: column;
+    }
+    .footerNav ul li a{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons{
+        margin-bottom: 20px;
+    }
+    .footercontainer{
+        padding: 50px 20px;
+    }
+    .footerBottom p{
+        font-size: 0.8em;
+    }
+    .designer{
+        font-size: 0.8em;
+    }
+    
+    
+}
+

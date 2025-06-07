@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8">
+		<title> Şevval Sude Demir </title>		<!-- Burada sayfanın ismini belirledim. -->
+		<link rel="icon" href="Sevval_Sude_Demir_Favicon.png" type="image/x-png">  
+		<style>		/* Burada sayfanın CSS kodlarını yazmak için "style" etiketi kullandım. */
+			body {
+				font-family: sans-serif;
+				margin: 40px;
+				background-color: #FFFDE7; 
+				color: #333;
+
+				display: flex;  /* Buradaki CSS kodları sayfayı ortalamayı ve hizalamayı ayarlıyor. */
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+			}
+			p.baglanti{
+				display: flex;
+				justify-content: left;
+				align-items: center;
+			}
+			div{
+				background-color: #F1F8E9;
+				padding: 20px;
+				margin-bottom: 20px;
+				border-radius: 15px;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+			.disina{
+				background-color: #FFFDE7; 
+				gap: 25px;
+				display: flex;
+				box-shadow: none;
+			}
+			@media screen and (max-width: 1024px){ /* Buradaki kodlar sitenin tablet/telefon için de uyumlu olmasını sağlıyor. */
+			 .disina{
+				flex-direction: column;
+				max-width: 100%;
+				width: 100%;
+				box-sizing: border-box;
+			}
+			}
+			img.Profil_Fotografi{
+				width: 150px;
+				border-radius: 50%;
+				display: block;
+				margin-bottom: 10px;
+			}
+			img.Baglanti{
+				width: 40px;
+				border-radius: 50%;
+				display: block;
+				margin-bottom: 10px;
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 10px;
+			}
+			th, td {
+				border: 1px solid #558B2F;
+				padding: 10px;
+				text-align: left;
+			}
+			blockquote {
+				font-style: italic;
+				color: #555;
+				margin: 20px 0;
+			}
+			a{
+				color: 	#558B2F; 
+				text-decoration: none;
+			}
+			a:hover {		/* Fare yazının üzerindeyken yazının renginin değişmesi için "a:hover" kullandım. */
+				color:	#33691E; 
+				text-decoration: underline; 
+			}
+			span{
+				background-color: #DCEDC8;
+			}
+			#baslik{
+				transition: transform 0.4s ease;
+				display: inline-block;
+			}
+			#baslik:hover{		/* Görüntünün altındaki yazının üstüne geldiğinde hareket etmesi için üstteki kodları ve ":hover" özelliğini kullandım. */
+				transform: translateY(-5px);
+			}
+			#ortala { 		/* Profil fotoğrafını bulunduğu div bloğunda ortalar. */
+				text-align: center;
+			}
+			#ortala img{		/* Profil fotoğrafını bulunduğu div bloğunda görüntüyü ortalar. */
+				display: block;
+				margin: 0 auto 5px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="ortala">
+			<img src="Sevval_Sude_Demir_Fotograf.jpg" alt="Profil Fotoğrafı" class="Profil_Fotografi">
+			<h1> <span id="baslik"> Şevval Sude Demir </span> </h1>		<!-- Burada yazının arka planını değiştirmek ve birkaç özellik eklemek için "Span" etiketini kullandım. -->
+			<blockquote> "Bazen kaybolmamız, doğru yolu bulmamız içindir." – Haruki Murakami </blockquote>		<!-- Burada alıntı mesajı yazmak için "Blockquote" etiketini kullandım. -->
+			<h1> Ankara Üniversitesi Nallıhan Meslek Yüksekokulu <br>
+				2024-2025 Eğitim-Öğretim Dönemi <br>
+				NBP128 Web Geliştirme Ortamları Uygulama Ara Sınavı </h1>
+		</div>
+			
+		
+		
+		<div>
+			<h2> Benim Hakkımda! </h2> 
+			<p> Selam! Ben Şevval, 18 yaşındayım. Ankara'da yaşıyorum.<strong> Ankara Üniversitesi - Bilgisayar Programcılığı </strong> 1. sınıf öğrencisiyim. 
+				Aynı zamanda TSSF'de hakemlik sınavını geçmiş ve aday hakemliği hak kazanmış bir hakemim. 
+				Alanım 2 yıllık olduğundan dolayı mezun olduktan sonra DGS'ye girip 4 yıla tamamlamak istiyorum.
+				Anime izlemeyi, müzik dinlemeyi, oyun oynamayı, yüzmeyi, basketbol oynamayı, çizgi roman ve kitap okumayı, Etoloji hakkında araştırma yapmayı çok severim. 
+				<em style="color: #9E9E9E;"> Gümüş </em> isimli küçük bir dostum var.
+				En sevdiğim renk <em style="color: #689F38;"> yeşil </em>. </p>
+		</div>
+		
+		<div class="disina">
+			<div>
+				<h2> İletişim! </h2>		<!-- Burada link ekledikten sonra yönlendirdiğim sekmenin başka bir sekmede açılması için 'target="_blank"' niteliğini kullandım. -->
+				<p class="baglanti"> <img src="GitHub_Logo.png" alt="GitHub Logosu" class="Baglanti"> 
+					<a href="https://github.com/Sivaall" target="_blank"> GitHub profilime buraya basarak gidebilirsiniz. </a> </p>
+				<p class="baglanti"> <img src="LinkedIn_Logo.png" alt="LinkedIn Logosu" class="Baglanti"> 
+					<a href="https://www.linkedin.com/in/%C5%9Fevval-sude-demir-b92282300/" target="_blank"> LinkedIn profilime buraya basarak gidebilirsiniz. </a> </p>
+				<p class="baglanti"> <img src="Instagram_Logo.png" alt="Instagram Logosu" class="Baglanti"> 
+					<a href="https://www.instagram.com/sevvals.demir/" target="_blank"> Instagram profilime buraya basarak gidebilirsiniz. </a> </p>
+			</div>
+
+			<div>
+				<h2> Hakkımda Küçük Detaylar! </h2>
+				<h3>En Sevdiğim Animeler:</h3>		<!-- Burada sevdiğim animeleri sıralı listelemek için "Ol" etiketini kullandım. -->
+				<ol type="1">
+					<li> Naruto </li>
+					<li> Haikyuu! </li>
+					<li> Eighty Six(86) </li>
+					<li> Frieren </li>
+					<li> Kusuriya no Hitorigoto </li>
+				</ol>
+
+				<h3> Sevdiğim Birkaç Hayvan Türü: </h3>		<!-- Burada sevdiğim hayvanları listelemek için "Ul" etiketini kullandım. -->
+				<ul>
+					<li> Kurbağa </li>
+					<li> Tilki  </li>
+					<li> Kaplumbağa </li>
+					<li> Panda </li>
+					<li> Papağan </li>
+				</ul>
+			</div>
+		</div>
+		
+		<div>
+			<h2> Eğitim Bilgilerim! </h2> 	<!-- Burada burada eğitim bilgilerimin içerdiği bir tablo yapmak için "Table" etiketini kullandım. -->		
+			<table>
+				<tr>
+					<th> Okul </th>
+					<th> Bölüm </th>
+					<th> Yıl </th>
+				</tr>
+				<tr>
+					<td> Özcan Sabancı Mesleki ve Teknik Anadolu Lisesi</td>
+					<td> Bilişim Teknolojileri </td>
+					<td> 2020 - 2024 </td>
+				</tr>
+				<tr>
+					<td> Ankara Üniversitesi </td>
+					<td> Bilgisayar Programcılığı </td>
+					<td> 2024 - 2026 </td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kişisel Portföy</title>
+    <link rel="icon" href="c:\Users\Görkem Deniz\Desktop\Yeni klasör\favicon-32x32.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #F9FAFB;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/ce/An%C4%B1tkabir%2C_Ankara.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+        }
+        img {
+            width: 150px;
+            border-radius: 50%;
+        }
+        
+        h1 {
+            text-align: center ;
+            color: #000000;
+        }
+        .skills, .education,.language {
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            
+        }
+       table, th, td {
+            border: 2px solid #000000;
+            
+        }
+        .container {
+      display: flex;
+      gap: 20px; 
+    }
+    ul {
+      list-style-type: disc;
+      padding: 0 20px;
+    }
+       
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        blockquote {
+            font-style: italic;
+            color: #230f96;
+        }
+        .block-inline-example {
+            margin-top: 20px;
+        }
+        div {
+            background-color: rgba(165, 165, 165, 0.7);
+            padding: 10px;
+        }
+        span {
+            color: rgb(211, 179, 179);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sayfa başlığı ve profil resmi -->
+    <h1>Görkem Deniz</h1>
+    <img src="c:\Users\Görkem Deniz\Desktop\Yeni klasör\profil fotoğrafı.jpg" alt="Profil Fotoğrafı">
+
+    <p>Merhaba! Ben Görkem. Web geliştirme tutkunu bir öğrenciyim.</p>
+
+    <!-- Kendini tanıtan paragraf -->
+    <p>Karakter olarak hırslı,inatçı ve azimliyim. Web geliştiriciliği benim için bir <strong>meslek</strong> değil, aynı zamanda eğlenerek yaptığım bir <em>hobi</em>dir.</p>
+
+    <!-- Harici bağlantı -->
+    <p>Daha fazla bilgi için <a href="https://github.com/Gorkem-9" target="_blank">GitHub hesabıma</a> göz atabilirsiniz.</p>
+
+    <!-- Beceriler listesi -->
+    <div class="skills">
+     <div class="container">
+        <h2>Becerilerim</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>C++</li>
+        </ul>
+        <ol>
+            <li>Soğuk kanlı</li>
+            <li>Takım çalışması</li>
+            <li>Yaratıcılık</li>
+            <li>Güçlü irade</li>
+        </ol>
+    </div>
+</div>
+    <!--Kullanılan diller-->
+    <div class="language">
+        <h2>Konuştuğum diller</h2>
+        <ul>
+            <li>TÜRKÇE</li>
+            <li>İNGİLİZCE</li>
+        </ul>
+    </div>
+
+    <!-- Eğitim bilgileri -->
+    <div class="education">
+        <h2>Eğitim Bilgilerim</h2>
+        <table >
+            <tr>
+                <th>Okul</th>
+                <th>Yıl</th>
+            </tr>
+            <tr>
+                <td>Battalgazi Ortaokulu</td>
+                <td>2015 -2019 </td>
+            </tr>
+            <tr>
+                <td>Ulubey Anadolu Lisesi</td>
+                <td>2019 - 2022</td>
+            </tr>
+            <tr>
+                <td>Ankara Üniversitesi Nallıhan Meslek Yüksekokulu</td>
+                <td>2024 - Devam</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Alıntı -->,
+     <div>
+     <h3>Hayatıma anlam katan sözler</h3>
+    <blockquote>"Acı çekmeden mutlu olunmaz, mutlu iken de acılardan kaçınılmaz."</blockquote>
+    <blockquote>"Okyanusta ölmez de insan, gider bir kaşık “sevda” da boğulur"</blockquote>
+</div>
+
+    <!-- <div> ve <span> örneği -->
+    <div class="block-inline-example">
+        <h2>Block vs Inline</h2>
+        <h2>Bu bir block elementtir.</h2>
+        <p>Bu bir <span>inline</span> element örneğidir.</p>
+    </div>
+<h3>Bana ulaşmak için</h3>
+<a href="mailto:grkm.dnz61@gmail.com?subject=İletişim&body=Merhaba, sizinle iletişime geçmek istiyorum.">Mail Gönder</a>
+
+   
+
+</body>
+</html>

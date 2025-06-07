@@ -1,0 +1,642 @@
+/* =================================
+   TEMA: DERİN MAVİ & NEON VURGULU GECE MODU
+   ================================= */
+/* Google Fonts: Poppins yazı tipini (farklı kalınlıklarla) içe aktar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* CSS Değişkenleri (Tüm site için merkezi ayarlar) */
+:root {
+    /* Renk Paleti */
+    --bg-dark-primary: #111827;       /* Ana Koyu Arka Plan */
+    --bg-dark-secondary: #1F2937;    /* İkincil Koyu Arka Plan */
+    --bg-dark-tertiary: #374151;     /* Üçüncül Koyu/Açık Gri */
+    --text-light-primary: #F3F4F6;   /* Ana Açık Metin Rengi */
+    --text-light-secondary: #9CA3AF; /* İkincil Açık Metin Rengi */
+    --accent-primary: #22D3EE;       /* Ana Vurgu Rengi (Neon) */
+    --accent-primary-darker: #0BC5EA;/* Vurgu Renginin Koyu Tonu */
+    --secondary-color: #3498db;     /* İkincil Vurgu Rengi */
+    --border-dark: #4B5563;         /* Koyu Tema Sınır Rengi */
+    --footer-bg: #1F2937;           /* Footer Arka Planı */
+    --footer-text: #9CA3AF;         /* Footer Metin Rengi */
+
+    /* Geçişler */
+    --transition-speed: 0.3s;       /* Standart Geçiş Hızı */
+    --transition-speed-fast: 0.2s;  /* Hızlı Geçiş Hızı */
+
+    /* Gölgeler */
+    --shadow-glow: 0 0 15px rgba(34, 211, 238, 0.15); /* Vurgu rengiyle parlama */
+    --shadow-soft-dark: 0 5px 15px rgba(0, 0, 0, 0.2);   /* Yumuşak koyu gölge */
+    --shadow-medium-dark: 0 8px 25px rgba(0, 0, 0, 0.25); /* Orta koyu gölge */
+    --shadow-strong-dark: 0 12px 35px rgba(0, 0, 0, 0.3); /* Güçlü koyu gölge */
+}
+
+/* =================================
+   GENEL STİLLER VE RESETLEME
+   ================================= */
+* { /* Tüm HTML elementleri için geçerli */
+    margin: 0; /* Dış boşluğu sıfırla */
+    padding: 0; /* İç boşluğu sıfırla */
+    box-sizing: border-box; /* Kutu modeli: padding ve border genişliğe dahil edilsin */
+    scroll-behavior: smooth; /* Sayfa içi linklere tıklayınca yumuşak kaydır */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Ana yazı tipi Poppins */
+    background-color: var(--bg-dark-primary); /* Ana arka plan rengi */
+    color: var(--text-light-secondary); /* Varsayılan metin rengi */
+    line-height: 1.7; /* Satırlar arası yükseklik */
+    padding: 0; /* Body kenar boşluğu olmasın */
+    display: flex; /* Flexbox kullanarak içeriği (container ve footer) düzenle */
+    flex-direction: column; /* İçeriği dikey olarak sırala */
+    align-items: center; /* İçeriği (container) yatayda ortala */
+    min-height: 100vh; /* Body yüksekliği en az ekran yüksekliği kadar olsun (footer'ı aşağı iter) */
+    letter-spacing: 0.5px; /* Harfler arası hafif boşluk */
+    overflow-x: hidden; /* Yatay taşmayı ve scroll bar'ı engelle */
+}
+
+/* Ana İçerik Kapsayıcısı */
+.container { /* Konteyner ayarları */
+    display: flex; /* İçindeki sütunları (aside, main) yan yana getirmek için */
+    max-width: 1200px; /* Konteynerin en fazla olacağı genişlik */
+    width: 100%; /* Genişliği esnek tut, ekran küçülünce küçülsün */
+    background-color: transparent; /* Arka planı body'den alsın */
+    border: 1px solid var(--bg-dark-tertiary); /* Konteyner çevresine hafif kenarlık */
+    border-radius: 15px; /* Konteyner köşelerini yuvarlat */
+    overflow: hidden; /* Kenarlık ve iç gölgelerin düzgün görünümü için taşmayı gizle */
+    margin: 50px 20px 0 20px; /* Üst ve yan boşluklar (alt boşluk yok) */
+    position: relative; /* İçindeki absolute konumlanmış elemanlar için referans noktası */
+    box-shadow: var(--shadow-medium-dark); /* Konteynere orta seviye gölge */
+    flex-grow: 1; /* Body flex içinde, footer hariç kalan tüm dikey boşluğu doldur */
+}
+
+/* Tüm Başlık Stilleri (H1-H6) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Başlık yazı tipi de Poppins */
+    color: var(--text-light-primary); /* Başlık rengi (daha parlak) */
+    letter-spacing: 1px; /* Başlıklarda harf aralığı biraz daha fazla */
+    font-weight: 700; /* Başlıklar kalın olsun */
+}
+/* Özel Başlık Boyutları ve Boşlukları */
+h1 { font-size: 3em; line-height: 1.2; margin-bottom: 20px; }
+h2 { font-size: 2em; margin-bottom: 30px; }
+h3 { font-size: 1.4em; margin-bottom: 15px; font-weight: 600; } /* H3 biraz daha ince */
+h4 { font-size: 1.1em; margin-bottom: 12px; font-weight: 600; }
+
+/* Link (<a>) Stilleri */
+a {
+    color: var(--accent-primary); /* Link rengi olarak vurgu rengi */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    transition: color var(--transition-speed-fast) ease-in-out, text-shadow var(--transition-speed-fast) ease; /* Renk ve gölge için yumuşak geçiş efekti */
+    border-radius: 2px; /* Odaklanma stili için hafif yuvarlama */
+}
+a:hover { /* Link üzerine gelince */
+    color: var(--accent-primary-darker); /* Rengi koyulaştır */
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.5); /* Hafif neon parlama efekti */
+}
+
+/* Genel Linkler ve Butonlar için Klavye Odaklanma Stili */
+a:focus-visible,
+.scroll-to-top:focus-visible { /* :focus-visible sadece klavye ile gezinildiğinde odağı gösterir */
+    outline: 2px solid var(--accent-primary); /* Vurgu renginde bir dış çizgi */
+    outline-offset: 2px; /* Çizgi ile eleman arasına hafif boşluk */
+    /* border-radius elemana özel tanımlanabilir */
+}
+
+
+/* Genel Resim (<img>) Stilleri */
+img {
+    max-width: 100%; /* Resimler kendi konteynerından taşmasın */
+    height: auto; /* Oranı koru */
+    display: block; /* Altında boşluk kalmasın */
+    border-radius: 8px; /* Resim köşelerini hafif yuvarlat */
+}
+
+/* =================================
+   SOL SÜTUN (ASIDE)
+   ================================= */
+.left-column { /* Kenar çubuğu */
+    flex: 0 0 340px; /* Genişliği 340px olsun, esnemesin veya küçülmesin */
+    display: flex; /* İçeriği (personal-info) hizalamak için flexbox */
+    flex-direction: column; /* İçeriği dikeyde sırala */
+    align-items: center; /* İçeriği yatayda ortala */
+    text-align: center; /* İçindeki metinleri ortala */
+    padding: 40px; /* İçten boşluk */
+    background-color: var(--bg-dark-secondary); /* İkincil koyu arka plan rengi */
+    /* Not: Yapışkanlık (sticky) ve kenar efektleri @media sorgusu içinde tanımlı */
+}
+
+.personal-info { /* Profil resmi, isim, bio ve ikonları içeren div */
+    margin-top: 20px; /* Sol sütunun tepesinden boşluk */
+    width: 100%; /* Tam genişlik (içerik ortalaması için) */
+}
+
+.profile-picture { /* Profil resmi */
+    width: 210px; /* Genişlik */
+    height: 210px; /* Yükseklik */
+    border-radius: 50%; /* Tamamen yuvarlak yap */
+    object-fit: cover; /* Resim boyutları farklı olsa bile alanı kapla, oranı koru (kırpabilir) */
+    border: 5px solid var(--bg-dark-tertiary); /* Çerçeve rengi */
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); /* Vurgu rengiyle hafif dış parlama */
+    display: block; /* Blok element yap */
+    margin: 0 auto 35px auto; /* Yatayda ortala (sağ/sol auto), altta 35px boşluk bırak */
+}
+
+.bio { /* Kısa tanıtım paragrafı */
+    font-size: 1.05em; /* Yazı boyutu */
+    color: var(--text-light-secondary); /* İkincil metin rengi (soluk) */
+    margin-bottom: 35px; /* Alt boşluk */
+    line-height: 1.8; /* Satır yüksekliği (daha ferah) */
+}
+
+.social-icons { /* Sosyal ikon linklerini içeren div */
+    display: flex; /* İkonları yan yana getirmek için */
+    justify-content: center; /* İkonları yatayda ortalamak için */
+    gap: 35px; /* İkonlar arası boşluk */
+    margin-top: 15px; /* Üst boşluk */
+}
+.social-icons a { /* İkon linkleri */
+    color: var(--text-light-secondary); /* İkon rengi */
+    font-size: 2em; /* İkon boyutu */
+    transition: transform var(--transition-speed-fast) ease-out, color var(--transition-speed-fast) ease-out, text-shadow var(--transition-speed-fast) ease; /* Yumuşak geçiş efektleri */
+}
+.social-icons a:hover { /* İkon linki üzerine gelince */
+    color: var(--accent-primary); /* Rengi vurgu rengi yap */
+    transform: translateY(-4px) scale(1.15); /* Yukarı kaldır ve biraz büyüt */
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.6); /* Neon parlama */
+}
+
+/* =================================
+   SAĞ SÜTUN (MAIN) & İÇERİK BLOKLARI
+   ================================= */
+.right-column { /* Ana içerik alanı */
+    flex: 1; /* Sol sütundan kalan tüm yatay alanı doldur */
+    min-width: 0; /* İçeriğin flex yapısını bozmasını engellemek için */
+    padding: 50px 40px; /* İçten üst/alt ve yan boşluklar */
+    background-color: var(--bg-dark-primary); /* Ana koyu arka plan */
+}
+
+.content-block { /* Hakkımda, Eğitim, Yetenekler gibi ana içerik bölümleri */
+    background-color: transparent; /* Arka planı transparan (sağ sütun rengi görünsün) */
+    padding: 0; /* İç boşluk yok (alt başlık ve paragraflarda var) */
+    margin-bottom: 55px; /* Bloklar arası dikey boşluk */
+    border: none; /* Dış kenarlık yok */
+    border-left: 4px solid var(--accent-primary); /* Sadece solda vurgu rengi çizgi */
+    padding-left: 35px; /* Soldaki çizgi için boşluk */
+    box-shadow: none; /* Gölge yok */
+    /* Giriş Animasyonu Başlangıç Durumu */
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(40px); /* Başlangıçta biraz aşağıda */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, border-color var(--transition-speed) ease; /* Görünme ve renk geçişi animasyonları */
+}
+.content-block:hover { /* Blok üzerine gelince */
+     transform: none; /* Hareket etmesin */
+     border-left-color: var(--accent-primary-darker); /* Sadece sol çizgi rengi koyulaşsın */
+}
+
+.block-title { /* Bölüm Başlıkları (H2) */
+    font-size: 1.7em; /* Boyut */
+    /* font-weight: 700; H2 için genel kuralda var */
+    margin-bottom: 18px; /* Alt boşluk */
+    display: flex; /* İkonu ve metni yan yana getirmek için */
+    align-items: center; /* İkonu ve metni dikeyde hizalamak için */
+    color: var(--text-light-primary); /* Parlak metin rengi */
+}
+.block-title .icon { /* Başlık yanındaki Font Awesome ikonu */
+    margin-right: 18px; /* İkonun sağına boşluk */
+    font-size: 1.1em; /* İkon boyutu */
+    color: var(--accent-primary); /* İkon rengi */
+    width: auto; /* Genişlik otomatik */
+    text-align: left; /* Hizalama */
+    transition: color var(--transition-speed-fast) ease; /* Renk geçişi */
+}
+.content-block:hover .block-title .icon { /* Blok üzerine gelince ikon rengi */
+     color: var(--accent-primary-darker);
+}
+
+.block-description { /* İçerik bloklarındaki ana açıklama alanı */
+    font-size: 1.05em; /* Yazı boyutu */
+    color: var(--text-light-secondary); /* Soluk metin rengi */
+    line-height: 1.8; /* Satır yüksekliği */
+}
+.block-description p { /* Eğer açıklama içinde <p> varsa (Hakkımda bölümü için) */
+    margin-bottom: 1em; /* Paragraflar arası boşluk */
+}
+.block-description p:last-child { /* Son paragrafın alt boşluğu olmasın */
+    margin-bottom: 0;
+}
+
+/* Giriş animasyonu için görünür class (JavaScript tarafından eklenir) */
+.content-block.visible, .projects.visible, .quote-section.visible {
+    opacity: 1; /* Tamamen görünür yap */
+    transform: translateY(0); /* Orijinal dikey konumuna getir */
+}
+/* Animasyonlar için farklı gecikme süreleri (ardışık gelmeleri için) */
+.content-block:nth-of-type(1).visible { transition-delay: 0.1s; } /* Hakkımda */
+.content-block:nth-of-type(2).visible { transition-delay: 0.2s; } /* Eğitim */
+.content-block:nth-of-type(3).visible { transition-delay: 0.3s; } /* Yetenekler/Sertifikalar */
+.projects.visible { transition-delay: 0.4s; } /* Projeler */
+.quote-section.visible { transition-delay: 0.2s; } /* Alıntı */
+
+
+/* --- Hakkımda & Span Stili --- */
+.about-me .block-description strong { /* Hakkımda içindeki <strong> etiketi */
+    color: var(--text-light-primary); /* Daha parlak renk */
+    font-weight: 600; /* Kalınlık */
+}
+.about-me .block-description em { /* Hakkımda içindeki <em> etiketi */
+   color: var(--accent-primary); /* Vurgu rengi */
+   font-style: normal; /* İtalik yapma */
+}
+.highlight { /* Metin içindeki <span class="highlight"> */
+    color: var(--accent-primary); /* Vurgu rengi */
+    font-weight: 600; /* Kalın yap */
+    background-color: rgba(34, 211, 238, 0.05); /* Çok hafif vurgulu arka plan */
+    padding: 2px 4px; /* İç boşluk */
+    border-radius: 3px; /* Hafif köşe yuvarlatma */
+}
+
+/* --- Eğitim Tablosu --- */
+.education-table { /* Eğitim bilgilerini içeren tablo */
+    width: 100%; /* Konteyner genişliğini doldur */
+    border-collapse: separate; /* Kenarlıklar ayrı olsun (radius için) */
+    border-spacing: 0; /* Hücreler arası boşluk sıfır */
+    margin-top: 20px; /* Üst boşluk */
+    font-size: 1em; /* Yazı boyutu */
+    border: 1px solid var(--border-dark); /* Dış kenarlık */
+    border-radius: 10px; /* Köşeleri yuvarlat */
+    overflow: hidden; /* Köşe yuvarlatmanın düzgün çalışması için */
+    background-color: var(--bg-dark-secondary); /* Tablo arka plan rengi */
+}
+.education-table th, .education-table td { /* Tablo başlık (th) ve veri (td) hücreleri */
+    padding: 15px 18px; /* İç boşluk */
+    text-align: left; /* Metni sola hizala */
+    vertical-align: middle; /* İçeriği dikeyde ortala */
+    border-bottom: 1px solid var(--border-dark); /* Hücrelerin altını çizgiyle ayır */
+}
+.education-table td { color: var(--text-light-secondary); /* Veri hücre rengi (soluk) */ }
+.education-table th { /* Başlık hücreleri */
+    background-color: rgba(55, 65, 81, 0.7); /* Hafif transparan başlık arka planı */
+    font-weight: 600; /* Kalın */
+    color: var(--text-light-primary); /* Parlak renk */
+    border-bottom-width: 2px; /* Alt kenarlık daha kalın */
+}
+.education-table tbody tr:last-child td { /* Tablonun son satırındaki hücreler */
+    border-bottom: none; /* Alt çizgiyi kaldır */
+}
+.education-table tbody tr { /* Tablo satırları */
+    transition: background-color var(--transition-speed-fast) ease, transform var(--transition-speed-fast) ease; /* Transform geçişi eklendi */
+}
+.education-table tbody tr:hover { /* Satır üzerine gelince */
+    background-color: var(--bg-dark-tertiary); /* Arka plan rengini değiştir */
+    transform: scale(1.01); /* Satırı hafifçe büyüt */
+}
+
+
+/* --- Yetenekler/Sertifikalar Bölümü (İki Sütunlu) --- */
+.skills-lists { /* İki listeyi içeren ana grid */
+    display: grid; /* Grid layout kullan */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Esnek sütunlar, min 260px */
+    gap: 35px; /* Sütunlar arası boşluk */
+    margin-top: 20px; /* Üst boşluk */
+    align-items: start; /* Sütunları dikeyde yukarı hizala */
+}
+.skills-lists h3 { /* Liste başlıkları ("Teknik Beceriler", "Sertifikalar ve Diller") */
+    font-size: 1.3em; /* Boyut */
+    color: var(--text-light-primary); /* Renk */
+    border-bottom: 2px solid var(--accent-primary); /* Altında vurgu renkli çizgi */
+    padding-bottom: 10px; /* Çizgi ile yazı arası boşluk */
+    margin-bottom: 20px; /* Başlık ile liste arası boşluk */
+    display: inline-block; /* Çizgi sadece yazı genişliğinde olsun */
+}
+.skills-lists ol, .skills-lists ul { /* Sıralı (ol) ve sırasız (ul) listeler */
+    padding-left: 40px; /* İçeriden sol boşluk (marker/numara için yer) */
+    font-size: 1.05em; /* Yazı boyutu */
+    color: var(--text-light-secondary); /* Metin rengi */
+    list-style: none; /* Varsayılan madde işaretlerini/numaraları kaldır */
+}
+.skills-lists li { /* Liste elemanları (hem ol hem ul için) */
+    margin-bottom: 15px; /* Elemanlar arası dikey boşluk */
+    line-height: 1.7; /* Satır yüksekliği */
+    padding-left: 0; /* İç sol boşluk yok (ol/ul'den geliyor) */
+    position: relative; /* ::before pseudo-elementini konumlandırmak için */
+    transition: transform var(--transition-speed-fast) ease; /* Hover için geçiş eklendi */
+}
+.skills-lists li:hover { /* Liste elemanı üzerine gelince */
+    transform: translateX(4px); /* Elemanı hafifçe sağa kaydır */
+    /* color: var(--text-light-primary); // İsteğe bağlı: Yazı rengini parlat */
+}
+/* Sırasız Liste İşaretleri (ul > li - Sertifikalar/Diller) */
+.skills-lists ul li::before { /* Her liste elemanının başına eklenen pseudo-element */
+    content: ""; /* İçerik boş (sadece şekil) */
+    background-color: var(--accent-primary); /* Vurgu rengi */
+    width: 8px; height: 8px; border-radius: 50%; /* Boyut ve şekil (yuvarlak) */
+    display: inline-block; /* Satır içinde yer alsın */
+    position: absolute; /* Konumlandırma için */
+    left: -20px; /* Liste sol boşluğunun içine yerleştir (padding'e göre) */
+    top: 0.4em; /* Dikey konumu metne göre ortala (em ile) */
+    box-shadow: var(--shadow-glow); /* Hafif vurgu rengi parlama */
+    transition: transform var(--transition-speed-fast) ease; /* Büyüme animasyonu geçişi */
+}
+.skills-lists ul li:hover::before { transform: scale(1.4); /* Üzerine gelince büyüt */ }
+/* Sıralı Liste Numaraları (ol > li - Teknik Beceriler) */
+.skills-lists ol { counter-reset: skills-counter; /* CSS sayacını başlat/sıfırla */ }
+.skills-lists ol li { counter-increment: skills-counter; /* Her li için sayacı bir artır */ }
+.skills-lists ol li::before { /* Her liste elemanının başına eklenen pseudo-element */
+    content: counter(skills-counter); /* İçerik olarak sayaç değerini göster */
+    position: absolute; /* Konumlandırma */
+    left: -33px; /* Liste sol boşluğunun içine yerleştir (genişliğe göre) */
+    top: 0.2em;  /* Dikey konumu metne göre ortala (em ile) */
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-primary-darker)); /* Degrade arka plan */
+    color: var(--bg-dark-primary); /* İçindeki numaranın rengi */
+    width: 26px; height: 26px; border-radius: 50%; /* Boyut ve şekil (yuvarlak) */
+    display: flex; justify-content: center; align-items: center; /* Numarayı tam ortala */
+    font-size: 0.8em; font-weight: bold; /* Numara yazı stili */
+    box-shadow: 0 3px 8px rgba(34, 211, 238, 0.3); /* Hafif gölge */
+    transition: transform var(--transition-speed-fast) ease; /* Dönme animasyonu geçişi */
+}
+.skills-lists ol li:hover::before { transform: scale(1.1) rotate(10deg); /* Üzerine gelince büyüt ve döndür */ }
+
+
+/* --- Projeler Bölümü --- */
+.projects { /* Projeler ana bölümü */
+    opacity: 0; transform: translateY(40px); /* Giriş animasyonu */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    margin-bottom: 50px; /* Alt boşluk */
+}
+.projects h2 { /* Projeler başlığı */
+    border-bottom: 2px solid var(--bg-dark-tertiary); /* Başlık altı çizgisi */
+    padding-bottom: 15px; margin-bottom: 35px; /* Boşluklar */
+}
+.projects h2 .icon { color: var(--accent-primary); /* Başlık ikonu rengi */ }
+
+.project-grid { /* Proje kartlarını içeren grid yapısı */
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esnek sütunlar, min 300px */
+    gap: 35px; /* Kartlar arası boşluk */
+}
+.project-item { /* Her bir proje kartı */
+    background-color: var(--bg-dark-secondary); /* Kart arka planı */
+    border: 1px solid var(--border-dark); /* Kart kenarlığı */
+    border-radius: 12px; /* Köşe yuvarlatma */
+    overflow: hidden; /* İçerik taşmasını engelle */
+    box-shadow: var(--shadow-soft-dark); /* Hafif kart gölgesi */
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* Yumuşak geçiş */
+    display: flex; flex-direction: column; /* İçeriği dikeyde yönet */
+}
+.project-item:hover { /* Kart üzerine gelince */
+    transform: translateY(-10px); /* Yukarı kaldır */
+    box-shadow: var(--shadow-strong-dark); /* Gölgeyi belirginleştir */
+}
+.project-item .image-container { /* Proje resmini içeren div */
+    position: relative; /* İçindeki overlay için */
+    overflow: hidden; /* Resim taşmasını engelle */
+    height: 220px; /* Sabit resim alanı yüksekliği */
+    background-color: var(--bg-dark-tertiary); /* Resim yüklenmezse arka plan */
+}
+.project-item img { /* Proje resmi */
+    width: 100%; height: 100%; /* Konteyneri doldur */
+    object-fit: cover; /* Orantılı kapla, gerekirse kırp */
+    display: block; /* Alt boşluğu engelle */
+    transition: transform 0.5s ease, filter 0.5s ease; /* Büyüme ve filtre geçişi */
+    filter: saturate(0.8); /* Başlangıçta renkler hafif soluk */
+}
+.project-item:hover img { /* Kart üzerine gelince resim */
+    transform: scale(1.08); /* Resmi büyüt */
+    filter: saturate(1); /* Renkleri canlandır */
+}
+.project-item .image-container::after { /* Resim üzerine gelen overlay katmanı */
+    content: 'Projeyi Görüntüle →'; /* Overlay üzerindeki yazı */
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; /* Tüm alanı kapla */
+    background: linear-gradient(to top, rgba(17, 24, 39, 0.9) 0%, rgba(31, 41, 55, 0.1) 100%); /* Alttan üste koyu degrade */
+    color: white; /* Yazı rengi */
+    display: flex; justify-content: center; align-items: flex-end; /* Yazıyı alta ortala */
+    padding: 20px; font-size: 1.2em; font-weight: 600; text-align: center; /* Yazı stili */
+    opacity: 0; /* Başlangıçta gizli */
+    transition: opacity var(--transition-speed) ease; /* Yavaşça belirme efekti */
+    pointer-events: none; /* Overlay'in tıklanmasını engelle */
+}
+.project-item:hover .image-container::after { opacity: 1; /* Üzerine gelince overlay'i göster */ }
+.project-item .project-content { /* Kartın altındaki metin alanı (başlık, p, link) */
+     padding: 25px; /* İç boşluk */
+     display: flex; flex-direction: column; /* Dikey yapı */
+     flex-grow: 1; /* Kart içinde kalan tüm dikey boşluğu doldur */
+}
+.project-item h3 { /* Proje başlığı */
+    font-size: 1.35em; margin: 0 0 12px 0; color: var(--text-light-primary);
+}
+.project-item p { /* Proje açıklaması */
+    font-size: 1em; color: var(--text-light-secondary); flex-grow: 1; /* Dikey boşluğu doldur */
+    margin-bottom: 20px; line-height: 1.7;
+}
+.project-link { /* Proje linki (Detaylar/GitHub) */
+    display: inline-block; /* Satır içi blok, kendi genişliği kadar */
+    background-color: transparent; /* Arka plan yok */
+    color: var(--accent-primary); /* Vurgu rengi */
+    padding: 10px 0; /* Dikey boşluk */
+    text-align: left; /* Sola hizalı */
+    font-weight: bold; font-size: 1em; /* Yazı stili */
+    margin-top: auto; /* Üstündeki elemanlar itince en alta yerleşir */
+    border-radius: 0; border: none; /* Kenarlık/yuvarlaklık yok */
+    transition: color var(--transition-speed-fast) ease-in-out, transform var(--transition-speed-fast) ease; /* Geçiş */
+    align-self: flex-start; /* Yatayda sola yasla */
+}
+.project-link i { margin-left: 8px; font-size: 0.9em; } /* Link yanındaki dış link ikonu */
+.project-link:hover { /* Proje linki üzerine gelince */
+    color: var(--accent-primary-darker); /* Renk koyulaşsın */
+    background-color: transparent; box-shadow: none; /* Diğer efektler olmasın */
+    transform: translateX(5px); /* Hafifçe sağa kaysın */
+}
+.project-link:active { /* Proje linkine tıklanınca */
+    transform: scale(0.98) translateX(0); /* Hafif küçült ve diğer transformları sıfırla */
+    box-shadow: none; /* Gölgeyi kaldır */
+}
+
+
+/* --- Alıntı Bölümü --- */
+.quote-section { /* Alıntı içeren bölüm */
+    margin-top: 60px; margin-bottom: 50px; padding: 50px 55px; /* Boşluklar */
+    background: var(--bg-dark-secondary); /* Arka plan */
+    border-radius: 15px; /* Köşe yuvarlatma */
+    position: relative; /* İçindeki ::before için */
+    overflow: visible; /* ::before dışarı taşabilir */
+    border: 1px solid var(--border-dark); /* Kenarlık */
+    box-shadow: var(--shadow-soft-dark); /* Hafif gölge */
+    text-align: center; /* İçeriği ortala */
+    opacity: 0; transform: translateY(40px); /* Giriş animasyonu */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.quote-section::before { /* Dekoratif büyük tırnak işareti */
+    content: "\f10d"; /* Font Awesome sol tırnak ikonunun unicode'u */
+    font-family: "Font Awesome 6 Free"; /* İkon font ailesi */
+    font-weight: 900; /* İkonun solid stili için */
+    position: absolute; /* Konumlandırma */
+    top: -30px; /* Bölümün biraz üzerine taşı */
+    left: 50%; transform: translateX(-50%); /* Yatayda tam ortala */
+    font-size: 4em; /* Boyut */
+    color: var(--accent-primary); /* Vurgu rengi */
+    opacity: 0.8; /* Hafif saydam */
+    z-index: 1; /* Diğer içerikten önde olabilir */
+    line-height: 1; /* Satır yüksekliği */
+    text-shadow: var(--shadow-glow); /* Hafif parlama */
+}
+.quote-section blockquote { /* Alıntı metni */
+    margin: 0; padding: 0; font-style: normal; font-weight: 400; /* Stil sıfırlama ve ayar */
+    color: var(--text-light-primary); /* Parlak metin rengi */
+    line-height: 1.9; /* Satır aralığı */
+    font-size: 1.4em; /* Yazı boyutu */
+    position: relative; z-index: 0; /* Tırnak işaretinin arkasında kalması için */
+    padding-top: 20px; /* Üstteki tırnaktan boşluk */
+}
+.quote-section blockquote p { margin-bottom: 20px; /* Paragraflar arası boşluk */ }
+.quote-section cite { /* Alıntının kaynağı */
+    display: block; /* Kendi satırında */
+    text-align: center; /* Ortala */
+    font-style: normal; font-weight: normal; /* Stil */
+    color: var(--text-light-secondary); font-size: 1em; margin-top: 10px; /* Renk, boyut, boşluk */
+}
+.quote-section cite::before { content: "— "; /* Başına uzun tire ekle */ }
+
+
+/* =================================
+   FOOTER
+   ================================= */
+.site-footer { /* Sayfanın en altındaki bölüm */
+    width: 100%; /* Tam genişlik */
+    max-width: none; /* Genişlik sınırı yok */
+    margin-top: auto; /* Sayfa içeriği kısaysa footer'ı body içinde aşağı iter */
+    padding: 35px 40px; /* İç boşluk */
+    background-color: var(--footer-bg); /* Arka plan rengi */
+    color: var(--footer-text); /* Metin rengi */
+    text-align: center; /* İçeriği ortala */
+    border-top: 1px solid var(--border-dark); /* Üst kenarlık */
+    border-radius: 0; /* Köşe yuvarlatma yok */
+    font-size: 0.95em; /* Yazı boyutu */
+}
+.footer-social-icons { margin-top: 18px; /* Üst boşluk */ }
+.footer-social-icons a { /* Footer ikonları */
+    color: var(--footer-text); font-size: 1.6em; margin: 0 15px; /* Renk, boyut, boşluk */
+    transition: color var(--transition-speed-fast) ease, transform var(--transition-speed-fast) ease, text-shadow var(--transition-speed-fast) ease; /* Geçişler */
+}
+.footer-social-icons a:hover { /* Footer ikonu üzerine gelince */
+    color: var(--accent-primary); /* Renk değiştir */
+    transform: scale(1.15); /* Büyüt */
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.5); /* Hafif parla */
+}
+
+
+/* =================================
+   SCROLL TO TOP BUTTON
+   ================================= */
+.scroll-to-top { /* Yukarı çık butonu */
+    position: fixed; /* Sayfada sabit konum */
+    bottom: 35px; right: 35px; /* Sağ alt köşe konumu */
+    width: 55px; height: 55px; /* Boyut */
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-primary-darker)); /* Degrade arka plan */
+    color: var(--bg-dark-primary); /* İçindeki ok ikonunun rengi */
+    border-radius: 50%; /* Tam yuvarlak */
+    display: none; /* Başlangıçta gizli (JS ile gösterilir) */
+    justify-content: center; align-items: center; /* İkonu tam ortala */
+    box-shadow: 0 5px 15px rgba(34, 211, 238, 0.4); /* Hafif renkli gölge */
+    cursor: pointer; /* Tıklanabilir imleç */
+    z-index: 1000; /* Diğer elemanların üzerinde kalsın */
+    transition: all var(--transition-speed-fast) ease; /* Tüm özellikler için hızlı geçiş */
+    opacity: 0.75; /* Hafif saydam */
+}
+.scroll-to-top:hover { /* Buton üzerine gelince */
+    opacity: 1; /* Tam görünür yap */
+    transform: scale(1.1) translateY(-4px); /* Büyüt ve yukarı kaldır */
+    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.5); /* Gölgeyi belirginleştir */
+}
+.scroll-to-top i { font-size: 1.4em; line-height: 1; /* Ok ikonu boyutu */ }
+.scroll-to-top:active { /* Butona tıklanınca */
+    transform: scale(1.0) translateY(0); /* Hafif küçült ve diğer transformları sıfırla */
+    box-shadow: 0 3px 10px rgba(34, 211, 238, 0.4); /* Gölgeyi azalt */
+}
+
+
+/* =================================
+   DUYARLILIK (RESPONSIVE)
+   ================================= */
+
+/* Sticky Sol Sütun & Kenar Efektleri (Sadece Geniş Ekran 993px+) */
+@media (min-width: 993px) { /* 993px ve üzeri ekranlar için */
+    .left-column {
+        position: sticky; /* Sayfa kayarken sabit kalsın */
+        top: 0; /* Ekranın en üstüne yapışsın */
+        height: 100vh; /* Yüksekliği ekran yüksekliği kadar */
+        max-height: 100vh; /* Taşmayı engelle */
+        overflow-y: auto; /* İçerik sığmazsa dikey scroll bar çıksın */
+        align-self: flex-start; /* Flex içinde dikeyde yukarı hizalansın */
+        /* Yumuşak Kenar Geçişleri İçin İç Gölgeler */
+        box-shadow:
+            inset -15px 0 15px -10px var(--bg-dark-primary), /* Sağ Kenar */
+            inset 0 -15px 15px -10px var(--bg-dark-primary); /* Alt Kenar */
+        /* Scroll bar gizleme (isteğe bağlı) */
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .left-column::-webkit-scrollbar { display: none; /* Chrome/Safari/Opera */ }
+}
+
+/* Tablet ve Altı (992px ve altı) */
+@media (max-width: 992px) {
+    body { padding: 0; } /* Body kenar boşluğunu kaldır */
+    .container { /* Konteyner ayarlarını mobil için sıfırla */
+        flex-direction: column; /* Sütunları alt alta getir */
+        gap: 0; /* Sütun arası boşluğu kaldır */
+        padding: 0 25px; /* Konteyner yan boşlukları (mobil taşma için) */
+        max-width: 100%; /* Tam genişlik */
+        border: none; border-radius: 0; box-shadow: none; margin: 0; /* Diğer sıfırlamalar */
+        overflow: hidden; /* Konteyner kendi içindeki taşmayı engelle */
+    }
+    .left-column { /* Sol sütun ayarları (mobil) */
+        position: static; /* Sticky özelliği iptal */
+        height: auto; overflow-y: visible; flex-basis: auto; width: 100%; /* Boyut ve konum sıfırlama */
+        border-right: none; border-bottom: 1px solid var(--border-dark); /* Sadece alt kenarlık */
+        padding: 40px 0; /* Yan boşlukları kaldır, sadece üst/alt */
+        align-items: center; text-align: center; /* Hizalama */
+        box-shadow: none; /* Kenar efekt gölgesini kaldır */
+        overflow-x: hidden; /* Sütun içindeki yatay taşmayı engelle */
+    }
+     .right-column { /* Sağ sütun ayarları (mobil) */
+        padding: 40px 0; /* Yan boşlukları kaldır, sadece üst/alt */
+        width: 100%; /* Tam genişlik */
+        overflow-x: hidden; /* Sütun içindeki yatay taşmayı engelle */
+     }
+    .profile-picture { width: 180px; height: 180px; } /* Profil resmi küçülür */
+    h1 { font-size: 2.6em; } h2 { font-size: 1.8em; } /* Başlık boyutları */
+    .site-footer { border-radius: 0; } /* Footer köşeleri düz */
+}
+
+/* Mobil (768px ve altı) */
+@media (max-width: 768px) {
+     h1 { font-size: 2.4em; } h2 { font-size: 1.7em; } h3 { font-size: 1.3em; } /* Başlıklar küçülür */
+    .skills-lists, .project-grid { grid-template-columns: 1fr; gap: 30px; } /* Listeler/Projeler tek sütun */
+    .quote-section { padding: 40px 30px; } /* Alıntı bölümü boşlukları */
+    .quote-section::before { font-size: 6em; } /* Alıntı tırnağı boyutu */
+    .quote-section blockquote { font-size: 1.3em; } /* Alıntı metni boyutu */
+     .scroll-to-top { width: 50px; height: 50px; bottom: 25px; right: 25px; } /* Yukarı çık butonu */
+     .scroll-to-top i { font-size: 1.2em; } /* Buton ikonu */
+}
+
+/* Küçük Mobil (480px ve altı) */
+@media (max-width: 480px) {
+     .container {
+        padding: 0 20px; /* Yan boşluğu biraz daha azalt */
+    }
+    .left-column, .right-column {
+        padding: 30px 0; /* Üst/Alt boşluğu azalt, yanlar sıfır */
+        overflow-x: hidden;
+    }
+    h1 { font-size: 2.1em; } h2 { font-size: 1.6em; } /* Başlıklar */
+    .profile-picture { width: 160px; height: 160px; } /* Profil resmi */
+    .content-block { padding-left: 25px; margin-bottom: 40px;} /* İçerik bloğu */
+    .education-table th, .education-table td { padding: 12px; font-size: 0.9em;} /* Tablo */
+    .skills-lists ol, .skills-lists ul { padding-left: 30px; /* Mobil için padding ayarı */ font-size: 1em;} /* Listeler */
+    .skills-lists li { padding-left: 5px; /* Mobil için padding ayarı */ margin-bottom: 12px;}
+    .skills-lists ol li::before { left: -30px; /* Mobil için numara konumu */ }
+    .skills-lists ul li::before { left: -15px; /* Mobil için marker konumu */ }
+    .project-item h3 { font-size: 1.2em;} /* Proje başlığı */
+    .project-item .project-content { padding: 20px; } /* Proje içeriği */
+    .site-footer { padding: 30px 25px; } /* Footer */
+}

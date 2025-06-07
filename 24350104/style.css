@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #343a40;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.project {
+    background: #e9ecef;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Yeni eklenen erkek ikon stili */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+#iletisim i {
+    color: #007bff;
+    margin-right: 6px;
+    transition: transform 0.2s ease;
+}
+
+#iletisim i:hover {
+    transform: scale(1.2);
+    color: #0056b3;
+}
+.profile-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a:hover i {
+    transform: scale(1.2);
+    color: #0077ff; /* mavi tonlu hover rengi */
+}
+/* style.css */
+html {
+    scroll-behavior: auto !important;
+  }
+  
+
+  
+  
+  
